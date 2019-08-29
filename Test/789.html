@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        canvas {
+            display: block;
+        }
+
+    </style>
+</head>
+<body onload="draw();">
+<div id="windowJump"></div>
+</body>
+<!--<script src="/lib/three.js"></script>-->
+<!--<script src="/lib/js/loaders/OBJLoader.js"></script>-->
+<!--<script src="/lib/js/controls/OrbitControls.js"></script>-->
+<!--<script src="/lib/js/libs/stats.min.js"></script>-->
+<!--<script src="/lib/js/libs/dat.gui.min.js"></script>-->
+
+<script src="JS/three.js"></script>
+
+<script src="JS/controls/TrackballControls.js"></script>
+
+<script src="JS/loaders/VTKLoader2.js"></script>
+<script src="JS/loaders/OBJLoader.js"></script>
+<script src="JS/loaders/MTLLoader.js"></script>
+<script src="JS/loaders/GLTFLoader.js"></script>
+
+<script src="JS/Detector.js"></script>
+<script src="JS/Stats.js"></script>
+<script src="JS/libs/dat.gui.min.js"></script>
+<script src="JS/libs/stats.min.js"></script>
+<script src="JS/controls/OrbitControls.js"></script>
+<script src="node_modules/three-onevent/onEvent.js"></script>
+
+<script>
+    var camera;
+
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.01, 10000);
+    camera.position.set(0, 2, -1.5);
+    // camera.lookAt(new THREE.Vector3(0, 10, 10));
+    // camera.lookAt({x: 3, y: 3, z: 3});
+
+    var scene;
+
+    scene = new THREE.Scene();
+    // scene.add(WebVR.camera);
+    scene.add(camera);
+
+    THREE.onEvent(scene, camera);
+
+    var renderer;
+
+    function initRender() {
+        renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        //告诉渲染器需要阴影效果
+        renderer.setClearColor(0xffffff);
+        document.body.appendChild(renderer.domElement);
+    }
+
+    //初始化dat.GUI简化试验流程
+    var gui;
+
+    function initGui() {
+        //声明一个保存需求修改的相关数据的对象
+        gui = {};
+        var datGui = new dat.GUI();
+        //将设置属性添加到gui当中，gui.add(对象，属性，最小值，最大值）
+    }
+
+    var light;
+
+    function initLight() {
+        scene.add(new THREE.AmbientLight(0xffffff));
+
+        light = new THREE.PointLight(0xffffff);
+        light.position.set(0, 0, 100);
+
+        //告诉平行光需要开启阴影投射
+        light.castShadow = true;
+
+        scene.add(light);
+    }
+
+    function initModel() {
+        //辅助工具
+        var helper = new THREE.AxesHelper(50);
+        scene.add(helper);
+
+        let loader = new THREE.GLTFLoader();/*实例化加载器*/
+
+        loader.load('models/gltf/1KLC.gltf', function (obj) {
+            console.log(obj);
+            obj.scene.position.y = 0;
+            scene.add(obj.scene);
+
+            var isclick = false;
+            // add click listener
+            // add hover listener
+            obj.scene.on('hover', function (m) {
+                document.body.style.cursor = 'pointer';
+                m.material.opacity = 0.5;
+            }, function (m) {
+                m.material.opacity = 1;
+                document.body.style.cursor = 'initial';
+            });
+            obj.scene.on('click', function (m) {
+                if (!isclick) {
+                    m.position.y = 5;
+                    m.scale.set(1.5, 1.5, 1.5);
+                    isclick = true;
+                } else {
+                    m.position.y = 0;
+                    m.scale.set(1, 1, 1);
+                    isclick = false;
+                    console.log("fuckoff");
+                }
+            });
+        });
+
+        var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
+        var material = new THREE.MeshPhongMaterial({color: 0xaaaaaa});
+        var ground = new THREE.Mesh(geometry, material);
+
+        ground.rotation.x = -Math.PI / 2;
+        ground.position.y = -10;
+        ground.receiveShadow = true;
+        scene.add(ground);
+    }
+
+
+    //初始化性能插件
+    var stats;
+
+    function initStats() {
+        stats = new Stats();
+        document.body.appendChild(stats.dom);
+    }
+
+    //用户交互插件 鼠标左键按住旋转，右键按住平移，滚轮缩放
+    var controls;
+
+    function initControls() {
+
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // 如果使用animate方法时，将此函数删除
+        //controls.addEventListener( 'change', render );
+        // 使动画循环使用时阻尼或自转 意思是否有惯性
+        controls.enableDamping = true;
+        //动态阻尼系数 就是鼠标拖拽旋转灵敏度
+        //controls.dampingFactor = 0.25;
+        //是否可以缩放
+        controls.enableZoom = false;
+        //是否自动旋转
+        controls.autoRotate = false;
+        //设置相机距离原点的最远距离
+        controls.minDistance = 1;
+        //设置相机距离原点的最远距离
+        controls.maxDistance = 200;
+        //是否开启右键拖拽
+        controls.enablePan = false;
+        controls.maxPolarAngle = 180 / 360 * Math.PI;
+        controls.target = new THREE.Vector3(0, 1.5, 0);
+        // controls.maxZoom = 0;
+        // controls.minZoom = 3;
+    }
+
+    function render() {
+
+        renderer.render(scene, camera);
+    }
+
+    //窗口变动触发的函数
+    function onWindowResize() {
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        render();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+    }
+
+    //声明raycaster和mouse变量
+    // var raycaster = new THREE.Raycaster();
+    // var mouse = new THREE.Vector2();
+    //
+    // function onMouseClick(event) {
+    //     //通过鼠标点击的位置计算出raycaster所需要的点的位置，以屏幕中心为原点，值的范围为-1到1.
+    //     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    //     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    //
+    //     // 通过鼠标点的位置和当前相机的矩阵计算出raycaster
+    //     raycaster.setFromCamera(mouse, camera);
+    //
+    //     // 获取raycaster直线和所有模型相交的数组集合
+    //     var intersects = raycaster.intersectObjects(scene.children);
+    //
+    //     console.log(intersects);
+    //
+    //     //将所有的相交的模型的颜色设置为红色，如果只需要将第一个触发事件，那就数组的第一个模型改变颜色即可
+    //     for (var i = 0; i < intersects.length; i++) {
+    //         // intersects[i].object.destroy();
+    //         // document.getElementById("windowJump").innerHTML = "10086";
+    //
+    //     }
+    // }
+    //
+    // window.addEventListener('click', onMouseClick, false);
+
+    function animate() {
+        //更新控制器
+        render();
+
+        //更新性能插件
+        stats.update();
+
+        controls.update();
+
+        requestAnimationFrame(animate);
+    }
+
+    function draw() {
+        initGui();
+        initRender();
+        // initScene();
+        // initCamera();
+        initLight();
+        initModel();
+        initControls();
+        initStats();
+
+        animate();
+        window.onresize = onWindowResize;
+    }
+</script>
+</html>

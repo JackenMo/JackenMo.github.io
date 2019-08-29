@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            font-family: Monospace;
+            background-color: #000;
+            color: #fff;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        #info {
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            z-index: 100;
+            display: block;
+        }
+
+        #info a, .button {
+            color: #f00;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer
+        }
+    </style>
+</head>
+
+<body>
+<div id="info">
+</div>
+
+<script src="JS/three.js"></script>
+
+<script src="JS/controls/TrackballControls.js"></script>
+
+<script src="JS/loaders/VTKLoader2.js"></script>
+<script src="JS/loaders/OBJLoader.js"></script>
+<script src="JS/loaders/MTLLoader.js"></script>
+
+<script src="JS/Detector.js"></script>
+<script src="JS/Stats.js"></script>
+
+<script>
+
+    if (!Detector.webgl) Detector.addGetWebGLMessage();
+
+    var container, stats;
+
+    var camera, controls, scene, renderer;
+
+    var cross;
+
+    init();
+    animate();
+
+    function init() {
+
+        camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.01, 1e10);
+        camera.position.z = 0.2;
+
+        controls = new THREE.TrackballControls(camera);
+
+        controls.rotateSpeed = 5.0;
+        controls.zoomSpeed = 5;
+        controls.panSpeed = 2;
+
+        controls.noZoom = false;
+        controls.noPan = false;
+
+        controls.staticMoving = false;
+        controls.dynamicDampingFactor = 0.3;
+
+        scene = new THREE.Scene();
+
+        scene.add(camera);
+
+        // light
+
+        var dirLight = new THREE.DirectionalLight(0xffffff);
+        dirLight.position.set(200, 200, 1000).normalize();
+
+        camera.add(dirLight);
+        camera.add(dirLight.target);
+
+        var material = new THREE.MeshLambertMaterial({color: 0xffffff, side: THREE.DoubleSide});
+
+        // var loader = new THREE.VTKLoader();
+        // loader.addEventListener('load', function (event) {
+        //
+        //     var geometry = event.content;
+        //
+        //     var mesh = new THREE.Mesh(geometry, material);
+        //     mesh.position.setY(-0.09);
+        //     scene.add(mesh);
+        //
+        // });
+        // loader.load("models/vtk/bunny.vtk", function (geometry) {
+        //     //模型的法向量有问题，更新一下法向量
+        //     geometry.computeFaceNormals();
+        //     geometry.computeVertexNormals();
+        // });
+
+        //辅助工具
+        // var helper = new THREE.AxesHelper(50);
+        // scene.add(helper);
+
+        var loader = new THREE.VTKLoader();
+        loader.load("models/vtk/bunny.vtk", function (geometry) {
+            //模型的法向量有问题，更新一下法向量
+            geometry.computeFaceNormals();
+            geometry.computeVertexNormals();
+            //创建纹理
+            // var mat = new THREE.MeshLambertMaterial({color: 0xaaaaaa});
+            //创建模型
+            var group = new THREE.Mesh(geometry, material);
+            group.position.setY(-0.09);
+            // group.scale.set(10, 10, 10);
+            scene.add(group);
+        });
+
+        var loaderObj = new THREE.OBJLoader();
+        var loaderMTL = new THREE.MTLLoader();
+        loaderMTL.load("models/obj/bar.mtl", function (materials) {
+            loaderObj.setMaterials(materials);
+            loaderObj.load("models/obj/Bar.obj", function (obj) {
+                // 加载后的一些编辑操作
+                // obj.children[0].scale.set(1,1,1);//网格模型缩放
+                // obj.children[0].geometry.center();//网格模型的几何体居中
+                obj.scale.set(10, 10, 10);
+                scene.add(obj);
+            });
+        });
+
+        // renderer
+
+        renderer = new THREE.WebGLRenderer({antialias: false});
+        // renderer.setClearColorHex( 0x000000, 1 );
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        container.appendChild(renderer.domElement);
+
+        stats = new Stats();
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.top = '0px';
+        container.appendChild(stats.domElement);
+
+        //
+
+        window.addEventListener('resize', onWindowResize, false);
+
+    }
+
+    function onWindowResize() {
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        controls.handleResize();
+
+    }
+
+    function animate() {
+
+        requestAnimationFrame(animate);
+
+        controls.update();
+        renderer.render(scene, camera);
+
+        stats.update();
+
+    }
+
+</script>
+
+</body>
+</html>

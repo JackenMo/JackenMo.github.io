@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Three框架</title>
+    <script src="JS/three.js"></script>
+    <script src="JS/loaders/GLTFLoader.js"></script>
+    <script src="JS/Detector.js"></script>
+    <script src="JS/Stats.js"></script>
+    <script src="JS/libs/dat.gui.min.js"></script>
+    <script src="JS/libs/stats.min.js"></script>
+    <script src="JS/controls/OrbitControls.js"></script>
+    <style type="text/css">
+        div#canvas-frame {
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            height: 600px;
+            background-color: #EEEEEE;
+        }
+
+    </style>
+    <script>
+        var renderer;
+
+        function initThree() {
+            // width = document.getElementById('canvas-frame').clientWidth;
+            // height = document.getElementById('canvas-frame').clientHeight;
+            renderer = new THREE.WebGLRenderer({antialias: true});
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            renderer.setClearColor(0xFFFFFF, 1.0);
+        }
+
+        var camera;
+
+        function initCamera() {
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.01, 10000);
+            camera.position.set(0, 2, -1.5);
+        }
+
+        var scene;
+
+        function initScene() {
+            scene = new THREE.Scene();
+        }
+
+        var light;
+
+        function initLight() {
+            scene.add(new THREE.AmbientLight(0xffffff));
+
+            light = new THREE.PointLight(0xffffff);
+            light.position.set(0, 0, 100);
+
+            //告诉平行光需要开启阴影投射
+            light.castShadow = true;
+
+            scene.add(light);
+        }
+
+        function initObject() {
+            //辅助工具
+            var helper = new THREE.AxesHelper(50);
+            scene.add(helper);
+
+            let loader = new THREE.GLTFLoader();/*实例化加载器*/
+
+            loader.load('models/gltf/1KLC.gltf', function (obj) {
+                console.log(obj);
+                obj.scene.position.y = 0;
+                scene.add(obj.scene);
+            });
+
+            var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
+            var material = new THREE.MeshPhongMaterial({color: 0xaaaaaa});
+            var ground = new THREE.Mesh(geometry, material);
+
+            ground.rotation.x = -Math.PI / 2;
+            ground.position.y = -10;
+            ground.receiveShadow = true;
+            scene.add(ground);
+        }
+
+        function initControls() {
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+            // 如果使用animate方法时，将此函数删除
+            //controls.addEventListener( 'change', render );
+            // 使动画循环使用时阻尼或自转 意思是否有惯性
+            controls.enableDamping = true;
+            //动态阻尼系数 就是鼠标拖拽旋转灵敏度
+            //controls.dampingFactor = 0.25;
+            //是否可以缩放
+            controls.enableZoom = false;
+            //是否自动旋转
+            controls.autoRotate = false;
+            //设置相机距离原点的最远距离
+            controls.minDistance = 1;
+            //设置相机距离原点的最远距离
+            controls.maxDistance = 200;
+            //是否开启右键拖拽
+            controls.enablePan = false;
+            controls.maxPolarAngle = 180 / 360 * Math.PI;
+            controls.target = new THREE.Vector3(0, 1.5, 0);
+            // controls.maxZoom = 0;
+            // controls.minZoom = 3;
+        }
+
+        function threeStart() {
+            initThree();
+            initCamera();
+            initScene();
+            initLight();
+            initObject();
+            animation();
+            initControls()
+        }
+
+        function animation() {
+            renderer.render(scene, camera);
+            requestAnimationFrame(animation);
+        }
+    </script>
+</head>
+
+<body onload="threeStart();">
+<!--<div id="canvas-frame"></div>-->
+</body>
+</html>
