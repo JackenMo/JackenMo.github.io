@@ -1,0 +1,22 @@
+# 
+# Wavefront material file
+# Created with Kaydara FBX
+# 
+
+newmtl bar_color
+map_Kd kebab color 2.png
+Ka 0.588235 0.588235 0.588235
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+illum 2
+Ns 2.000000
+Tr 1.000000
+
+newmtl bar_wood
+map_Kd wood 1.png
+Ka 0.588235 0.588235 0.588235
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+illum 2
+Ns 2.000000
+Tr 1.000000
