@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0b65aaf-ba3b-4f32-94ea-625e252157d2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/aframe/placeground/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/aframe/placeground/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,6 +16,7 @@
   <component name="ProjectId" id="1PlgYShrHkVhK4mOAAjgHtjnjnc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="web.server" />
@@ -46,7 +46,7 @@
       <workItem from="1566454146894" duration="2929000" />
       <workItem from="1566533185805" duration="4129000" />
       <workItem from="1567146862707" duration="123000" />
-      <workItem from="1567147541335" duration="1556000" />
+      <workItem from="1567147541335" duration="1613000" />
     </task>
     <servers />
   </component>
