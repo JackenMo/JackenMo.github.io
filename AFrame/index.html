@@ -7,7 +7,7 @@
     <script>
         var box = document.querySelector("#box");
         box.addEventListener("click", function () {
-            console.log("我被点击了！")
+            // console.log("我被点击了！")
         });
     </script>
 </head>
@@ -16,6 +16,7 @@
 <body>
 <a-scene>
     <a-entity id="camera" camera position="1 1.5 1" rotation="25 180 0" look-controls cursor="rayOrigin: mouse"></a-entity>
+    <a-entity id="camera" camera position="-1 1.5 -1" rotation="25 80 0" look-controls cursor="rayOrigin: mouse"></a-entity>
     <a-assets>
         <a-asset-item id="SMALL" src="SMALL.gltf"></a-asset-item>
     </a-assets>
