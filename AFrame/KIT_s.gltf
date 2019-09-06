@@ -3476,7 +3476,7 @@
 	"buffers": [
 		{
 			"byteLength": 1004654,
-			"uri": "SMALL.bin"
+			"uri": "KIT_s.bin"
 		}
 	],
 	"bufferViews": [
@@ -3510,28 +3510,28 @@
 	],
 	"images": [
 		{
-			"uri": "Assets/Kebab Interior/Textures/wood 1.jpg"
+			"uri": "Assets\Kebab Interior\Textures/wood 1.jpg"
 		},
 		{
-			"uri": "Assets/Kebab Interior/Textures/kebab color 2.jpg"
+			"uri": "Assets\Kebab Interior\Textures/kebab color 2.jpg"
 		},
 		{
-			"uri": "Assets/Kebab Interior/Textures/tray.jpg"
+			"uri": "Assets\Kebab Interior\Textures/tray.jpg"
 		},
 		{
-			"uri": "Assets/Kebab Interior/Textures/cash register.jpg"
+			"uri": "Assets\Kebab Interior\Textures/cash register.jpg"
 		},
 		{
-			"uri": "Assets/Kebab Interior/Textures/tiles_sc.jpg"
+			"uri": "Assets\Kebab Interior\Textures/tiles_sc.jpg"
 		},
 		{
-			"uri": "Assets/Kebab Interior/Textures/tiles N_sc.jpg"
+			"uri": "Assets\Kebab Interior\Textures/tiles N_sc.jpg"
 		},
 		{
-			"uri": "Assets/Kebab Interior/Textures/kebab color plastic.jpg"
+			"uri": "Assets\Kebab Interior\Textures/kebab color plastic.jpg"
 		},
 		{
-			"uri": "Assets/Kebab Interior/Textures/table wood.jpg"
+			"uri": "Assets\Kebab Interior\Textures/table wood.jpg"
 		}
 	],
 	"materials": [
