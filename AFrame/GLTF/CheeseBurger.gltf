@@ -1,0 +1,178 @@
+{
+	"asset": {
+		"generator": "Unity 2019.2.0b10",
+		"extras": {
+			"exporterVersion" : "2.2.1"
+		},
+		"version": "2.0"
+	},
+	"accessors": [
+		{
+			"bufferView": 2,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 230,
+			"max": [ 0.089598, 0.108253, 0.094209 ],
+			"min": [ -0.089598, 0, -0.094208 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 2760,
+			"componentType": 5126,
+			"count": 230,
+			"max": [ 0.9539999, 1, 0.9998283 ],
+			"min": [ -0.9539999, -1, -0.9998283 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 230,
+			"max": [ 0.994641, 0.994122 ],
+			"min": [ 0.004812, 0.03849 ],
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 230,
+			"max": [ 0.9195408, 0.9995744, 0.999716, 1 ],
+			"min": [ -0.9997826, -0.999574, -0.9060229, -1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 0,
+			"byteOffset": 0,
+			"componentType": 5123,
+			"count": 1020,
+			"max": [ 229 ],
+			"min": [ 0 ],
+			"type": "SCALAR"
+		}
+	],
+	"buffers": [
+		{
+			"byteLength": 13080,
+			"uri": "CheeseBurger.bin"
+		}
+	],
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 2040,
+			"target": 34963,
+			"byteOffset": 11040
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1840,
+			"target": 34962,
+			"byteStride": 8,
+			"byteOffset": 0
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5520,
+			"target": 34962,
+			"byteStride": 12,
+			"byteOffset": 1840
+		},
+		{
+			"buffer": 0,
+			"byteLength": 3680,
+			"target": 34962,
+			"byteStride": 16,
+			"byteOffset": 7360
+		}
+	],
+	"images": [
+		{
+			"uri": "Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Burgers_D_256.jpg"
+		},
+		{
+			"uri": "Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Burgers_N_256.jpg"
+		}
+	],
+	"materials": [
+		{
+			"pbrMetallicRoughness": {
+				"baseColorTexture" : {
+					"index" : 0,
+					"texCoord" : 0
+				},
+				"baseColorFactor": [1, 1, 1, 1],
+				"metallicFactor": 0,
+				"roughnessFactor": 0.7
+			},
+			"normalTexture" : {
+				"index" : 1,
+				"texCoord" : 0,
+				"scale" : 1
+			},
+			"emissiveFactor": [0, 0, 0],
+			"doubleSided": false,
+			"name": "FFHP_MAT_Burgers_256"
+		}
+	],
+	"meshes": [
+		{
+			"name": "mesh_FFHP_MOD_Cheeseburger_12928FFHP_PRE_Cheeseburger_256",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 0,
+						"NORMAL": 1,
+						"TEXCOORD_0": 2,
+						"TANGENT": 3
+					},
+					"indices": 4,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"name": "UnityGlTF_root",
+			"children": [
+				1
+			]
+		},
+		{
+			"name": "node_FFHP_PRE_Cheeseburger_256_-18152",
+			"mesh": 0,
+			"matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.2642644, 1.012991, -0.8339636, 1]
+		}
+	],
+	"samplers": [
+		{
+			"magFilter": 9729,
+			"minFilter": 9985,
+			"wrapS": 10497,
+			"wrapT": 10497
+		}
+	],
+	"scenes": [
+		{
+			"name":"defaultScene",
+			"nodes": [
+				0
+			]
+		}
+	],
+	"scene": 0,
+	"textures": [
+		{
+			"sampler": 0,
+			"source": 0
+		},
+		{
+			"sampler": 0,
+			"source": 1
+		}
+	]
+}

@@ -1,0 +1,612 @@
+{
+	"asset": {
+		"generator": "Unity 2019.2.0b10",
+		"extras": {
+			"exporterVersion" : "2.2.1"
+		},
+		"version": "2.0"
+	},
+	"accessors": [
+		{
+			"bufferView": 2,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.060718, 0.029036, 0.098548 ],
+			"min": [ -0.06274, -0.031586, -0.095168 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 768,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.9711779, 0.9996886, 0.9674295 ],
+			"min": [ -0.9836781, -0.9998982, -0.9408871 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 1, 1, 1, 1 ],
+			"min": [ 1, 1, 1, 1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.995816, 0.989974 ],
+			"min": [ 0.567034, 0.42387 ],
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 1024,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.5912006, 0.9585941, 0.9889249, 1 ],
+			"min": [ -0.4941772, -0.9772876, -0.9958467, 1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 0,
+			"byteOffset": 0,
+			"componentType": 5123,
+			"count": 312,
+			"max": [ 63 ],
+			"min": [ 0 ],
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 1536,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.060718, 0.029036, 0.098548 ],
+			"min": [ -0.06274, -0.031586, -0.095168 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 2304,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.9711779, 0.9996886, 0.9674295 ],
+			"min": [ -0.9836781, -0.9998982, -0.9408871 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 2048,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 1, 1, 1, 1 ],
+			"min": [ 1, 1, 1, 1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 512,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.995816, 0.989974 ],
+			"min": [ 0.567034, 0.42387 ],
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 3072,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.5912006, 0.9585941, 0.9889249, 1 ],
+			"min": [ -0.4941772, -0.9772876, -0.9958467, 1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 0,
+			"byteOffset": 624,
+			"componentType": 5123,
+			"count": 312,
+			"max": [ 63 ],
+			"min": [ 0 ],
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 3072,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.060718, 0.029036, 0.098548 ],
+			"min": [ -0.06274, -0.031586, -0.095168 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 3840,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.9711779, 0.9996886, 0.9674295 ],
+			"min": [ -0.9836781, -0.9998982, -0.9408871 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 4096,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 1, 1, 1, 1 ],
+			"min": [ 1, 1, 1, 1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 1024,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.995816, 0.989974 ],
+			"min": [ 0.567034, 0.42387 ],
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 5120,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.5912006, 0.9585941, 0.9889249, 1 ],
+			"min": [ -0.4941772, -0.9772876, -0.9958467, 1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 0,
+			"byteOffset": 1248,
+			"componentType": 5123,
+			"count": 312,
+			"max": [ 63 ],
+			"min": [ 0 ],
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 4608,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.060718, 0.029036, 0.098548 ],
+			"min": [ -0.06274, -0.031586, -0.095168 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 5376,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.9711779, 0.9996886, 0.9674295 ],
+			"min": [ -0.9836781, -0.9998982, -0.9408871 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 6144,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 1, 1, 1, 1 ],
+			"min": [ 1, 1, 1, 1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 1536,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.995816, 0.989974 ],
+			"min": [ 0.567034, 0.42387 ],
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 7168,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.5912006, 0.9585941, 0.9889249, 1 ],
+			"min": [ -0.4941772, -0.9772876, -0.9958467, 1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 0,
+			"byteOffset": 1872,
+			"componentType": 5123,
+			"count": 312,
+			"max": [ 63 ],
+			"min": [ 0 ],
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 6144,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.060718, 0.029036, 0.098548 ],
+			"min": [ -0.06274, -0.031586, -0.095168 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 6912,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.9711779, 0.9996886, 0.9674295 ],
+			"min": [ -0.9836781, -0.9998982, -0.9408871 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 8192,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 1, 1, 1, 1 ],
+			"min": [ 1, 1, 1, 1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 2048,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.995816, 0.989974 ],
+			"min": [ 0.567034, 0.42387 ],
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 9216,
+			"componentType": 5126,
+			"count": 64,
+			"max": [ 0.5912006, 0.9585941, 0.9889249, 1 ],
+			"min": [ -0.4941772, -0.9772876, -0.9958467, 1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 0,
+			"byteOffset": 2496,
+			"componentType": 5123,
+			"count": 312,
+			"max": [ 63 ],
+			"min": [ 0 ],
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 7680,
+			"componentType": 5126,
+			"count": 166,
+			"max": [ 0.170932, 0.263561, 0.243798 ],
+			"min": [ -0.170931, 0, -0.109634 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 9672,
+			"componentType": 5126,
+			"count": 166,
+			"max": [ 0.9209626, 0.9547859, 1 ],
+			"min": [ -0.9209626, -0.7071068, -0.9999957 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 2560,
+			"componentType": 5126,
+			"count": 166,
+			"max": [ 0.997415, 0.99402 ],
+			"min": [ 0.005995, 0.007211 ],
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 10240,
+			"componentType": 5126,
+			"count": 166,
+			"max": [ 0.8553672, 1, 0.9105639, 1 ],
+			"min": [ -1, -1, -0.9958391, -1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 0,
+			"byteOffset": 3120,
+			"componentType": 5123,
+			"count": 516,
+			"max": [ 165 ],
+			"min": [ 0 ],
+			"type": "SCALAR"
+		}
+	],
+	"buffers": [
+		{
+			"byteLength": 32600,
+			"uri": "ChickenNuggets.bin"
+		}
+	],
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 4152,
+			"target": 34963,
+			"byteOffset": 28448
+		},
+		{
+			"buffer": 0,
+			"byteLength": 3888,
+			"target": 34962,
+			"byteStride": 8,
+			"byteOffset": 0
+		},
+		{
+			"buffer": 0,
+			"byteLength": 11664,
+			"target": 34962,
+			"byteStride": 12,
+			"byteOffset": 3888
+		},
+		{
+			"buffer": 0,
+			"byteLength": 12896,
+			"target": 34962,
+			"byteStride": 16,
+			"byteOffset": 15552
+		}
+	],
+	"images": [
+		{
+			"uri": "Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Fried_foods_D_256.jpg"
+		},
+		{
+			"uri": "Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Fried_foods_N_256.jpg"
+		},
+		{
+			"uri": "Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Nuggets_box_D_256.jpg"
+		},
+		{
+			"uri": "Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Nuggets_box_N_256.jpg"
+		}
+	],
+	"materials": [
+		{
+			"pbrMetallicRoughness": {
+				"baseColorTexture" : {
+					"index" : 0,
+					"texCoord" : 0
+				},
+				"baseColorFactor": [1, 1, 1, 1],
+				"metallicFactor": 0,
+				"roughnessFactor": 0.5
+			},
+			"normalTexture" : {
+				"index" : 1,
+				"texCoord" : 0,
+				"scale" : 1
+			},
+			"emissiveFactor": [0, 0, 0],
+			"doubleSided": false,
+			"name": "FFHP_MAT_Fried_foods_256"
+		},
+		{
+			"pbrMetallicRoughness": {
+				"baseColorTexture" : {
+					"index" : 2,
+					"texCoord" : 0
+				},
+				"baseColorFactor": [1, 1, 1, 1],
+				"metallicFactor": 0,
+				"roughnessFactor": 0.8
+			},
+			"normalTexture" : {
+				"index" : 3,
+				"texCoord" : 0,
+				"scale" : 1
+			},
+			"emissiveFactor": [0, 0, 0],
+			"doubleSided": false,
+			"name": "FFHP_MAT_Chicken_nugget_box_256"
+		}
+	],
+	"meshes": [
+		{
+			"name": "mesh_FFHP_MOD_Chicken_nugget_13496FFHP_PRE_Chicken_nugget_256",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 0,
+						"NORMAL": 1,
+						"COLOR_0": 2,
+						"TEXCOORD_0": 3,
+						"TANGENT": 4
+					},
+					"indices": 5,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		},
+		{
+			"name": "mesh_FFHP_MOD_Chicken_nugget_13496FFHP_PRE_Chicken_nugget_256",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 6,
+						"NORMAL": 7,
+						"COLOR_0": 8,
+						"TEXCOORD_0": 9,
+						"TANGENT": 10
+					},
+					"indices": 11,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		},
+		{
+			"name": "mesh_FFHP_MOD_Chicken_nugget_13496FFHP_PRE_Chicken_nugget_256",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 12,
+						"NORMAL": 13,
+						"COLOR_0": 14,
+						"TEXCOORD_0": 15,
+						"TANGENT": 16
+					},
+					"indices": 17,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		},
+		{
+			"name": "mesh_FFHP_MOD_Chicken_nugget_13496FFHP_PRE_Chicken_nugget_256",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 18,
+						"NORMAL": 19,
+						"COLOR_0": 20,
+						"TEXCOORD_0": 21,
+						"TANGENT": 22
+					},
+					"indices": 23,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		},
+		{
+			"name": "mesh_FFHP_MOD_Chicken_nugget_13496FFHP_PRE_Chicken_nugget_256",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 24,
+						"NORMAL": 25,
+						"COLOR_0": 26,
+						"TEXCOORD_0": 27,
+						"TANGENT": 28
+					},
+					"indices": 29,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		},
+		{
+			"name": "mesh_FFHP_MOD_Chicken_nuggets_box_open_12420FFHP_PRE_Chicken_nugget_box_open_256",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 30,
+						"NORMAL": 31,
+						"TEXCOORD_0": 32,
+						"TANGENT": 33
+					},
+					"indices": 34,
+					"material": 1,
+					"mode": 4
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"name": "UnityGlTF_root",
+			"children": [
+				1
+			]
+		},
+		{
+			"name": "node_FFHP_PRE_Box_Chicken_nuggets_256_-1644",
+			"children": [
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			],
+			"matrix": [-0.7071071, 0, -0.7071065, 0, 0, 1, 0, 0, 0.7071065, 0, -0.7071071, 0, 1.276979, 1, -0.941, 1]
+		},
+		{
+			"name": "node_FFHP_PRE_Chicken_nugget_256_-1646",
+			"mesh": 0,
+			"translation": [ 0.1019368, 0.0466744, 0.0247262],
+			"scale": [ 0.8634315, 0.8634315, 0.8634315],
+			"rotation": [-0.0269541, 0.1298849, 0.3513489, -0.9267995]
+		},
+		{
+			"name": "node_FFHP_PRE_Chicken_nugget_256_-1648",
+			"mesh": 1,
+			"translation": [ -0.06762956, 0.05504542, 0.03532187],
+			"scale": [ 0.92, 0.92, 0.92],
+			"rotation": [0.0401435, 0.918241, -0.01582126, 0.3936645]
+		},
+		{
+			"name": "node_FFHP_PRE_Chicken_nugget_256_-1650",
+			"mesh": 2,
+			"translation": [ 0.0522349, 0.05637985, -0.05854234],
+			"scale": [ 0.92, 0.9200001, 0.92],
+			"rotation": [-0.2522262, 0.6300591, -0.2752809, 0.6809023]
+		},
+		{
+			"name": "node_FFHP_PRE_Chicken_nugget_256_-1652",
+			"mesh": 3,
+			"translation": [ 0.02185163, 0.07600277, 0.02507044],
+			"scale": [ 0.9200001, 0.92, 0.92],
+			"rotation": [0.1873597, 0.09402608, 0.06018794, 0.9759267]
+		},
+		{
+			"name": "node_FFHP_PRE_Chicken_nugget_256_-1654",
+			"mesh": 4,
+			"translation": [ -0.08615726, 0.06702488, -0.02668471],
+			"scale": [ 0.9200001, 0.92, 0.92],
+			"rotation": [-0.05063743, 0.9772754, -0.1631505, 0.1255016]
+		},
+		{
+			"name": "node_FFHP_PRE_Chicken_nugget_box_open_256_-1656",
+			"mesh": 5
+		}
+	],
+	"samplers": [
+		{
+			"magFilter": 9729,
+			"minFilter": 9985,
+			"wrapS": 10497,
+			"wrapT": 10497
+		}
+	],
+	"scenes": [
+		{
+			"name":"defaultScene",
+			"nodes": [
+				0
+			]
+		}
+	],
+	"scene": 0,
+	"textures": [
+		{
+			"sampler": 0,
+			"source": 0
+		},
+		{
+			"sampler": 0,
+			"source": 1
+		},
+		{
+			"sampler": 0,
+			"source": 2
+		},
+		{
+			"sampler": 0,
+			"source": 3
+		}
+	]
+}

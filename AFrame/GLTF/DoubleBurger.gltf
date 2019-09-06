@@ -1,0 +1,261 @@
+{
+	"asset": {
+		"generator": "Unity 2019.2.0b10",
+		"extras": {
+			"exporterVersion" : "2.2.1"
+		},
+		"version": "2.0"
+	},
+	"accessors": [
+		{
+			"bufferView": 2,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 313,
+			"max": [ 0.08976, 0.150521, 0.09438 ],
+			"min": [ -0.08976, 0, -0.094379 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 3756,
+			"componentType": 5126,
+			"count": 313,
+			"max": [ 0.9539999, 1, 0.9998859 ],
+			"min": [ -0.9539999, -1, -0.9998859 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 313,
+			"max": [ 0.994641, 0.994122 ],
+			"min": [ 0.004812, 0.009693 ],
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 0,
+			"componentType": 5126,
+			"count": 313,
+			"max": [ 0.8220305, 0.9997044, 0.999716, 1 ],
+			"min": [ -0.9997827, -0.9997217, -0.9060274, -1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 0,
+			"byteOffset": 0,
+			"componentType": 5123,
+			"count": 1500,
+			"max": [ 312 ],
+			"min": [ 0 ],
+			"type": "SCALAR"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 7512,
+			"componentType": 5126,
+			"count": 232,
+			"max": [ 0.118421, 0.253354, 0.311052 ],
+			"min": [ -0.118421, 0, -0.118421 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 2,
+			"byteOffset": 10296,
+			"componentType": 5126,
+			"count": 232,
+			"max": [ 0.8971484, 0.9998678, 0.986822 ],
+			"min": [ -0.8971484, -0.9953474, -0.9844592 ],
+			"type": "VEC3"
+		},
+		{
+			"bufferView": 1,
+			"byteOffset": 2504,
+			"componentType": 5126,
+			"count": 232,
+			"max": [ 0, 0 ],
+			"min": [ 0, 0 ],
+			"type": "VEC2"
+		},
+		{
+			"bufferView": 3,
+			"byteOffset": 5008,
+			"componentType": 5126,
+			"count": 232,
+			"max": [ 0.9999931, 0.9991331, 0.4028148, 1 ],
+			"min": [ -0.2958909, -0.4062641, -0.9999902, -1 ],
+			"type": "VEC4"
+		},
+		{
+			"bufferView": 0,
+			"byteOffset": 3000,
+			"componentType": 5123,
+			"count": 1368,
+			"max": [ 231 ],
+			"min": [ 0 ],
+			"type": "SCALAR"
+		}
+	],
+	"buffers": [
+		{
+			"byteLength": 31896,
+			"uri": "DoubleBurger.bin"
+		}
+	],
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 5736,
+			"target": 34963,
+			"byteOffset": 26160
+		},
+		{
+			"buffer": 0,
+			"byteLength": 4360,
+			"target": 34962,
+			"byteStride": 8,
+			"byteOffset": 0
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13080,
+			"target": 34962,
+			"byteStride": 12,
+			"byteOffset": 4360
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8720,
+			"target": 34962,
+			"byteStride": 16,
+			"byteOffset": 17440
+		}
+	],
+	"images": [
+		{
+			"uri": "Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Burgers_D_256.jpg"
+		},
+		{
+			"uri": "Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Burgers_N_256.jpg"
+		}
+	],
+	"materials": [
+		{
+			"pbrMetallicRoughness": {
+				"baseColorTexture" : {
+					"index" : 0,
+					"texCoord" : 0
+				},
+				"baseColorFactor": [1, 1, 1, 1],
+				"metallicFactor": 0,
+				"roughnessFactor": 0.7
+			},
+			"normalTexture" : {
+				"index" : 1,
+				"texCoord" : 0,
+				"scale" : 1
+			},
+			"emissiveFactor": [0, 0, 0],
+			"doubleSided": false,
+			"name": "FFHP_MAT_Burgers_256"
+		},
+		{
+			"pbrMetallicRoughness": {
+				"baseColorFactor": [0.8731343, 0.7583082, 0.5799176, 1],
+				"metallicFactor": 0,
+				"roughnessFactor": 0.5
+			},
+			"emissiveFactor": [0, 0, 0],
+			"doubleSided": false,
+			"name": "FFHP_MAT_Food_box"
+		}
+	],
+	"meshes": [
+		{
+			"name": "mesh_FFHP_MOD_Double_burger_12570FFHP_PRE_Double_burger_256",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 0,
+						"NORMAL": 1,
+						"TEXCOORD_0": 2,
+						"TANGENT": 3
+					},
+					"indices": 4,
+					"material": 0,
+					"mode": 4
+				}
+			]
+		},
+		{
+			"name": "mesh_FFHP_MOD_Food_box_open_12502FFHP_PRE_Food_box_open",
+			"primitives": [
+				{
+					"attributes": {
+						"POSITION": 5,
+						"NORMAL": 6,
+						"TEXCOORD_0": 7,
+						"TANGENT": 8
+					},
+					"indices": 9,
+					"material": 1,
+					"mode": 4
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"name": "UnityGlTF_root",
+			"children": [
+				1
+			]
+		},
+		{
+			"name": "node_FFHP_PRE_Box_Double_burger_256_-1572",
+			"children": [
+				2,
+				3
+			],
+			"matrix": [-0.7071071, 0, -0.7071065, 0, 0, 1, 0, 0, 0.7071065, 0, -0.7071071, 0, 0.679, 1, -0.941, 1]
+		},
+		{
+			"name": "node_FFHP_PRE_Double_burger_256_-1574",
+			"mesh": 0,
+			"translation": [ 0, 0.003702402, 0]
+		},
+		{
+			"name": "node_FFHP_PRE_Food_box_open_-1576",
+			"mesh": 1
+		}
+	],
+	"samplers": [
+		{
+			"magFilter": 9729,
+			"minFilter": 9985,
+			"wrapS": 10497,
+			"wrapT": 10497
+		}
+	],
+	"scenes": [
+		{
+			"name":"defaultScene",
+			"nodes": [
+				0
+			]
+		}
+	],
+	"scene": 0,
+	"textures": [
+		{
+			"sampler": 0,
+			"source": 0
+		},
+		{
+			"sampler": 0,
+			"source": 1
+		}
+	]
+}
