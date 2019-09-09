@@ -26,7 +26,7 @@
     <script type="text/javascript"
             src="https://api.map.baidu.com/api?v=3.0&ak=CqubwDmuDc6oFRXAZoAkiHdqagQpreM0"></script>
     <script>
-        AFRAME.registerComponent('navigate-on-click', {
+        AFRAME.registerComponent('navonclick', {
             schema: {
                 url: {default: ''}
             },
@@ -66,13 +66,21 @@
                     newElement.addEventListener('model-loaded', () => {
                         // Once the model is loaded, we are ready to show it popping in using an animation
                         newElement.setAttribute('visible', 'true')
+                        newElement.setAttribute('id', 'house')
                         newElement.setAttribute('animation', {
                             property: 'scale',
                             to: '1 1 1',
                             easing: 'easeOutElastic',
                             dur: 800,
                         })
-                        newElement.setAttribute('navigate-on-click', 'url: index.html')
+                        // newElement.setAttribute('animation', {
+                        //     property: 'rotation',
+                        //     to: '0 0 0',
+                        //     easing: 'easeOutElastic',
+                        //     dur: 800,
+                        // })
+                        newElement.setAttribute('navonclick', 'url: index.html')
+                        newElement.setAttribute('rotation', '0 0 0')
                     })
                 }, {once: true})
             }
@@ -81,36 +89,21 @@
 </head>
 
 <body>
-<!--<div id="panorama"></div>-->
-<!--<div id="result">-->
-<!--    <input id="idBMap" name="name" type="text"/>-->
-<!--    <button id="setPanoramaByLocation">按经纬度展示全景</button>-->
-<!--    <button id="setPanoramaById">按全景Id展示全景</button>-->
-<!--    <button id="alertId" οnclick="test()">显示ID</button>-->
-<!--</div>-->
-<!-- We must add the tap-place component to the scene so it has an effect -->
 <a-scene
         xrweb
         tap-place
         xrextras-almost-there
         xrextras-loading
         xrextras-runtime-error>
-    <a-sky src="img/v23.jpg" rotation="0 -130 0"></a-sky>
+    <a-sky src="img/v23.jpg" rotation="0 0 0"></a-sky>
     <!-- We can define assets here to be loaded when A-Frame initializes -->
     <a-assets>
-        <!-- Credit to Poly by Google for the model: https://poly.google.com/view/6pwiq7hSrHr -->
-        <!--        <a-asset-item id="treeModel" src="tree.glb"></a-asset-item>-->
         <a-asset-item id="KTC" src="GLTF/ALL.gltf"></a-asset-item>
     </a-assets>
 
     <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
-    <a-camera
-            position="0 8 0"
-            raycaster="objects: .cantap"
-            cursor="
-          fuse: false;
-          rayOrigin: mouse;">
-    </a-camera>
+
+    <a-entity id="camera" camera position="0 8 0" look-controls cursor="rayOrigin: mouse"></a-entity>
 
     <a-entity
             light="type: directional;
@@ -119,6 +112,9 @@
     </a-entity>
 
     <a-light type="ambient" intensity="1"></a-light>
+
+    <a-image class="js-open-box" src="img/img (1).jpg" position="1.12 1.33 0" height=".17" width=".34"
+             navigate-on-click="url: img1.html"></a-image>
 
     <!-- Adding the cantap class allows the ground to be clicked -->
     <a-entity
@@ -130,37 +126,5 @@
             position="0 -1 0">
     </a-entity>
 </a-scene>
-<!--<script>-->
-<!--    function test() {-->
-<!--        //获取 输入框的值-->
-<!--        alert(document.getElementById("idBMap").value);-->
-<!--    }-->
-<!--</script>-->
-</body>
-</html>
-<!--<script type="text/javascript">-->
-<!--    var map = new BMap.Map('panorama');-->
-<!--    map.centerAndZoom(new BMap.Point(120.305456, 31.570037), 12);-->
-<!--    map.addTileLayer(new BMap.PanoramaCoverageLayer());-->
-
-<!--    var panorama = new BMap.Panorama('panorama');-->
-<!--    panorama.setPov({heading: -40, pitch: 6});-->
-
-<!--    panorama.setOptions({-->
-<!--        navigationControl: false,-->
-<!--        linksControl: false,-->
-<!--        indoorSceneSwitchControl: false,-->
-<!--        albumsControl: false,-->
-<!--    });-->
-
-<!--    panorama.setId("09000300121710141148130107I");//根据全景id展示全景图-->
-
-<!--    // document.getElementById("setPanoramaByLocation").onclick = function () {-->
-<!--    //     panorama.setPosition(new BMap.Point(120.320032, 31.589666)); //根据经纬度坐标展示全景图-->
-<!--    // };-->
-<!--    // document.getElementById("setPanoramaById").onclick = function () {-->
-<!--    //     panorama.setId(document.getElementById("idBMap").value);//根据全景id展示全景图-->
-<!--    // };-->
-<!--</script>-->
 </body>
 </html>
