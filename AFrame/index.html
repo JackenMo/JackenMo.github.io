@@ -2,13 +2,9 @@
 <head>
     <meta charset="utf-8">
     <title>place</title>
+    <link rel="stylesheet" type="text/css" href="CSS/index.css"/>
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script>
-        //         var box = document.querySelector("#SMALL");
-        //         box.addEventListener("click", function () {
-        //             console.log("我被点击了！")
-        //         });
-    </script>
+    <script src="JS/index.js"></script>
     <script>
         AFRAME.registerComponent('navigate-on-click', {
             schema: {
@@ -39,26 +35,32 @@
         <a-asset-item id="CBur" src="GLTF/CheeseBurger.gltf"></a-asset-item>
     </a-assets>
 
-<!--    <a-entity gltf-model="#ALL" id="ALL_E" position="0 0 0">-->
-<!--        <a-entity light="type: directional; color: #EEE; intensity: 0.2" position="0 10 2"></a-entity>-->
-<!--        <a-entity light="type: spot; color: #EEE; intensity: 0.2" position="0 10 -5"></a-entity>-->
-<!--        <a-entity light="type: ambient; color: #FFF; intensity: 1"></a-entity>-->
-<!--&lt;!&ndash;        <a-entity gltf-model="#CBur" id="CBur_E" rotation="0 265 0" position="1 -0.008 0.2"></a-entity>&ndash;&gt;-->
-<!--    </a-entity>-->
+    <!--    <a-entity gltf-model="#ALL" id="ALL_E" position="0 0 0">-->
+    <!--        <a-entity light="type: directional; color: #EEE; intensity: 0.2" position="0 10 2"></a-entity>-->
+    <!--        <a-entity light="type: spot; color: #EEE; intensity: 0.2" position="0 10 -5"></a-entity>-->
+    <!--        <a-entity light="type: ambient; color: #FFF; intensity: 1"></a-entity>-->
+    <!--&lt;!&ndash;        <a-entity gltf-model="#CBur" id="CBur_E" rotation="0 265 0" position="1 -0.008 0.2"></a-entity>&ndash;&gt;-->
+    <!--    </a-entity>-->
 
     <a-entity gltf-model="#SETs" id="SETs_E" position="0 0 0">
         <a-entity light="type: directional; color: #EEE; intensity: 0.2" position="0 10 2"></a-entity>
         <a-entity light="type: spot; color: #EEE; intensity: 0.2" position="0 10 -5"></a-entity>
         <a-entity light="type: ambient; color: #FFF; intensity: 1"></a-entity>
-        <a-image src="img/img (1).jpg" position="1.12 1.33 0" height=".17" width=".34" navigate-on-click="url: img1.html"></a-image>
-        <a-image src="img/img (2).jpg" position="1.12 1.485 0" height=".17" width=".34" navigate-on-click="url: img2.html"></a-image>
-        <a-image src="img/img (3).jpg" position="1.12 1.64 0" height=".17" width=".34" navigate-on-click="url: img3.html"></a-image>
-        <a-image src="img/img (4).jpg" position="1.12 1.795 0" height=".17" width=".34" navigate-on-click="url: img4.html"></a-image>
+        <a-image class="js-open-box" src="img/img (1).jpg" position="1.12 1.33 0" height=".17" width=".34"
+                 navigate-on-click="url: img1.html"></a-image>
+        <a-image class="js-open-box" src="img/img (2).jpg" position="1.12 1.485 0" height=".17" width=".34"
+                 navigate-on-click="url: img2.html"></a-image>
+        <a-image class="js-open-box" src="img/img (3).jpg" position="1.12 1.64 0" height=".17" width=".34"
+                 navigate-on-click="url: img3.html"></a-image>
+        <a-image class="js-open-box" src="img/img (4).jpg" position="1.12 1.795 0" height=".17" width=".34"
+                 navigate-on-click="url: img4.html"></a-image>
     </a-entity>
-
-
-</a-scene>
 </a-scene>
 
+<div class="box-login">
+    这里是弹窗内容
+</div>
+
+<div class="overlay"></div>
 </body>
 </html>

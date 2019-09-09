@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caff5855-b975-4c6e-9168-50c9ec8b2bc9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1KLC.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1KLC.gltf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Burgers_D_256.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Burgers_N_256.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Fried_foods_D_256.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Fried_foods_N_256.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Nuggets_box_D_256.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Nuggets_box_N_256.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/cash register.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/kebab color 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/kebab color plastic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/lamp.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/table wood.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/tiles N.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/tiles N_s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/tiles N_sc.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/tiles.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/tiles_s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/tiles_sc.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/tray.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kebab Interior/Textures/wood 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KIT_s.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KIT_s.gltf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTC.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTC.gltf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +62,7 @@
       <workItem from="1567486269766" duration="53000" />
       <workItem from="1567486323855" duration="1163000" />
       <workItem from="1567746503233" duration="1150000" />
-      <workItem from="1567747922968" duration="6339000" />
+      <workItem from="1567747922968" duration="7553000" />
     </task>
     <servers />
   </component>
