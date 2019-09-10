@@ -31,7 +31,7 @@
         AFRAME.registerComponent('tap-place', {
             init: function () {
                 const ground = document.getElementById('ground')
-                ground.addEventListener('click', event => {
+                ground.addEventListener('mousedown', event => {
                     // Create new entity for the new object
                     const newElement = document.createElement('a-entity')
 
