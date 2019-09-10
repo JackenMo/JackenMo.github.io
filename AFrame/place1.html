@@ -17,8 +17,11 @@
                 var data = this.data;
                 var el = this.el;
 
-                el.addEventListener('touchend', function () {
-                    window.location.href = data.url;
+                el.addEventListener('click', function () {
+                    setTimeout(
+                        function () {
+                            window.location.href = data.url;//事件处理
+                        }, 1000)
                 });
             }
         });
