@@ -3,17 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
-<!-- include A-Frame obviously -->
-<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-<!-- include ar.js for A-Frame -->
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <!-- include A-Frame obviously -->
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <!-- include ar.js for A-Frame -->
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
-<a-scene embedded arjs>
+<script>
+    AFRAME.registerComponent('navonclick', {
+        schema: {
+            url: {default: ''}
+        },
+
+        init: function () {
+            var data = this.data;
+            var el = this.el;
+
+            el.addEventListener('click', function () {
+                window.location.href = data.url;
+            });
+        }
+    });
+</script>
+<script>
+    // Component that places trees where the ground is clicked
+    AFRAME.registerComponent('tap-place', {
+        init: function () {
+            const ground = document.getElementById('ground')
+            ground.addEventListener('click', event => {
+                // Create new entity for the new object
+                const newElement = document.createElement('a-entity')
+
+                // The raycaster gives a location of the touch in the scene
+                const touchPoint = event.detail.intersection.point
+                newElement.setAttribute('position', touchPoint)
+
+                const randomYRotation = Math.random() * 360
+                newElement.setAttribute('rotation', '0 ' + randomYRotation + ' 0')
+
+                newElement.setAttribute('visible', 'false')
+                newElement.setAttribute('scale', '0.0001 0.0001 0.0001')
+
+                newElement.setAttribute('gltf-model', '#KTC')
+                this.el.sceneEl.appendChild(newElement)
+
+                newElement.addEventListener('model-loaded', () => {
+                    // Once the model is loaded, we are ready to show it popping in using an animation
+                    newElement.setAttribute('visible', 'true')
+                    newElement.setAttribute('id', 'house')
+                    newElement.setAttribute('animation', {
+                        property: 'scale',
+                        to: '1 1 1',
+                        easing: 'easeOutElastic',
+                        dur: 800,
+                    })
+                    newElement.setAttribute('navonclick', 'url: index.html')
+                    newElement.setAttribute('rotation', '0 0 0')
+                })
+            }, {once: true})
+        }
+    })
+</script>
+</head>
+<a-scene embedded arjs
+         xrweb
+         tap-place
+         xrextras-almost-there
+         xrextras-loading
+         xrextras-runtime-error>
+    <a-assets>
+        <a-asset-item id="KTC"
+                      src="https://github.com/JackenMo/JackenMo.github.io/tree/master/AFrame/GLTF/ALL.gltf"></a-asset-item>
+    </a-assets>
     <!-- create your content here. just a box for now -->
-    <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+    <a-box position='0 0.5 0' material='opacity: 0.8;'></a-box>
     <!-- define a camera which will move according to the marker position -->
-    <a-marker-camera preset='hiro'></a-marker-camera>
+    <a-marker-camera></a-marker-camera>
+    <a-entity id="camera" camera position="0 0 0" look-controls cursor="rayOrigin: mouse"></a-entity>
+    <a-light type="ambient" intensity="1"></a-light>
+    <a-entity
+            light="type: directional;
+               intensity: 0.8;"
+            position="1 4.3 2.5">
+    </a-entity>
+    <a-entity
+            id="ground"
+            class="cantap"
+            geometry="primitive: box"
+            material="color: #ffffff; transparent: true; opacity: 0.0"
+            scale="1000 2 1000"
+            position="0 -1 0">
+    </a-entity>
 </a-scene>
 </body>
 </html>
