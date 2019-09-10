@@ -21,7 +21,7 @@
                     setTimeout(
                         function () {
                             window.location.href = data.url;//事件处理
-                        }, 1000)
+                        }, 500)
                 });
             }
         });
@@ -31,7 +31,7 @@
         AFRAME.registerComponent('tap-place', {
             init: function () {
                 const ground = document.getElementById('ground')
-                ground.addEventListener('touchstart', event => {
+                ground.addEventListener('click', event => {
                     // Create new entity for the new object
                     const newElement = document.createElement('a-entity')
 
@@ -58,8 +58,8 @@
                             easing: 'easeOutElastic',
                             dur: 800,
                         })
-                        newElement.setAttribute('navonclick', 'url: index.html')
                         newElement.setAttribute('rotation', '0 0 0')
+                        newElement.setAttribute('navonclick', 'url: index.html')
                     })
                 }, {once: true})
             }
