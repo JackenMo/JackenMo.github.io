@@ -19,7 +19,10 @@
             var el = this.el;
 
             el.addEventListener('click', function () {
-                window.location.href = data.url;
+                setTimeout(
+                    function () {
+                        window.location.href = data.url;//事件处理
+                    }, 1000)
             });
         }
     });
