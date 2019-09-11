@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caff5855-b975-4c6e-9168-50c9ec8b2bc9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/JS/components.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/artest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artest.html" beforeDir="false" afterPath="$PROJECT_DIR$/artest.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -67,7 +68,7 @@
       <workItem from="1567486323855" duration="1163000" />
       <workItem from="1567746503233" duration="1150000" />
       <workItem from="1567747922968" duration="7553000" />
-      <workItem from="1568176498850" duration="89000" />
+      <workItem from="1568176498850" duration="1200000" />
     </task>
     <servers />
   </component>
