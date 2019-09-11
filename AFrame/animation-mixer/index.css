@@ -11,4 +11,5 @@ div.nextbutton {
   vertical-align: middle;
   user-select: none;
   display: none;
+  font-size: 0;
 }
