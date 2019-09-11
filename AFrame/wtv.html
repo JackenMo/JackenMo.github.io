@@ -41,7 +41,7 @@
         AFRAME.registerComponent('tap-place', {
             init: function () {
                 const ground = document.getElementById('ground')
-                ground.addEventListener('click', event => {
+                ground.addEventListener('mousedown', event => {
                     // Create new entity for the new object
                     const newElement = document.createElement('a-entity')
 
@@ -61,6 +61,7 @@
                     newElement.addEventListener('model-loaded', () => {
                         // Once the model is loaded, we are ready to show it popping in using an animation
                         newElement.setAttribute('visible', 'true')
+                        newElement.setAttribute('id', 'house')
                         newElement.setAttribute('animation', {
                             property: 'scale',
                             to: '1 1 1',
@@ -91,7 +92,7 @@
 
     <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
     <a-camera
-            position="0 8 0"
+            position="0 0 0"
             raycaster="objects: .cantap"
             cursor="
           fuse: false;
