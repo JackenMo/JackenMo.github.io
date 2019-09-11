@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>8th Wall Web: Tap to place</title>
 
+    <link rel="stylesheet" type="text/css" href="animation-mixer/index.css">
+
     <!-- We've included a slightly modified version of A-Frame, which fixes some polish concerns -->
     <script src="//cdn.8thwall.com/web/aframe/8frame-0.8.2.min.js"></script>
     <script src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
@@ -56,15 +58,17 @@
     </script>
 
     <script>
-        setInterval(function () {
-            document.getElementById("house").addEventListener("click", event=>{
-                window.location.href = "index.html"
-            })
-        }, 50)
+        if (document.getElementById("house" != null)) {
+            document.getElementById("nextbutton").style.height = "10%";
+        }
     </script>
 </head>
 
 <body>
+<div class="nextbutton" id="nextbutton">
+    <a href="index.html">Next ></a>
+</div>
+
 <!-- We must add the tap-place component to the scene so it has an effect -->
 <a-scene
         xrweb
