@@ -1,5 +1,5 @@
 div.nextbutton {
-    z-index: 99999;
+    z-index: 10;
     width: 33%;
     height: 3rem;
     position: absolute;

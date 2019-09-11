@@ -9,6 +9,7 @@
     <!-- We've included a slightly modified version of A-Frame, which fixes some polish concerns -->
     <script src="//cdn.8thwall.com/web/aframe/8frame-0.8.2.min.js"></script>
     <script src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
+    <script src="//cdn.8thwall.com/web/aframe/aframe-extras-4.2.0.min.js"></script>
 
     <!-- XR Extras - provides utilities like load screen, almost there, and error handling.
          See github.com/8thwall/web/xrextras -->
@@ -46,11 +47,10 @@
                         newElement.setAttribute('id', 'house')
                         newElement.setAttribute('animation', {
                             property: 'scale',
-                            to: '1 1 1',
+                            to: '0.1 0.1 0.1',
                             easing: 'easeOutElastic',
                             dur: 800,
                         })
-                        newElement.setAttribute('navonclick', 'url: index.html')
                     })
                 }, {once: true})
             }
