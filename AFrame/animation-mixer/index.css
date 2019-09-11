@@ -1,7 +1,7 @@
 div.nextbutton {
     z-index: 10;
     width: 33%;
-    height: 3rem;
+    height: 10%;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -10,8 +10,6 @@ div.nextbutton {
     color: #FFFFFF;
     vertical-align: middle;
     user-select: none;
-    /*display: none;*/
-    /*font-size: 0;*/
 }
 
 a:link, a:visited, a:hover, a:active {

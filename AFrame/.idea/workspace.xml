@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caff5855-b975-4c6e-9168-50c9ec8b2bc9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animation-mixer/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/animation-mixer/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wtv.html" beforeDir="false" afterPath="$PROJECT_DIR$/wtv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web-master/examples/aframe/animation-mixer/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../web-master/examples/aframe/animation-mixer/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
