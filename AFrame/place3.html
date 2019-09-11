@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>Tap to place</title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script>
+        function newDOM() {
+            var childNode = document.createElement('p');
+            childNode.innerHTML = '<span>这里是提示信息〜〜</span>';
+            childNode.setAttribute('class', 'alerts');
+            childNode.setAttribute('id', 'house');
+            childNode.setAttribute('onclick', 'this.style.display = "none"');
+            document.getElementById('p1').appendChild(childNode);
+        }
+    </script>
+    <script>
+        setInterval(function () {
+            if (document.getElementById("house") != null) {
+                document.getElementById("p2").style.display = "none";
+                document.getElementById("p2").style.fontSize = "0rem";
+            }
+        }, 50)
+    </script>
+</head>
+
+<body>
+<button onclick="newDOM()">button</button>
+<p id="p1"></p>
+<p id="p2">10086</p>
+</body>
+</html>

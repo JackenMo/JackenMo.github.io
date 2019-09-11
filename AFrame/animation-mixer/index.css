@@ -1,15 +1,20 @@
 div.nextbutton {
-  z-index: 10;
-  width: 33%;
-  height: 10%;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #7611B7;
-  text-align: center;
-  color: #FFFFFF;
-  vertical-align: middle;
-  user-select: none;
-  display: none;
-  font-size: 0;
+    z-index: 99999;
+    width: 33%;
+    height: 3rem;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #7611B7;
+    text-align: center;
+    color: #FFFFFF;
+    vertical-align: middle;
+    user-select: none;
+    display: none;
+    font-size: 0;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: #359AFF;
 }
