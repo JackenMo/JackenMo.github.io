@@ -10,8 +10,8 @@ div.nextbutton {
     color: #FFFFFF;
     vertical-align: middle;
     user-select: none;
-    display: none;
-    font-size: 0;
+    /*display: none;*/
+    /*font-size: 0;*/
 }
 
 a:link, a:visited, a:hover, a:active {
