@@ -3,9 +3,7 @@ a {
     width: 30%;
     height: 4.5rem;
     user-select: none;
-    /*display: none;*/
-    /*margin-left: -30%;*/
-    /*margin-bottom: 2rem;*/
+    display: none;
     border-radius: 1rem;
     position: absolute;
     bottom: 0;
@@ -30,4 +28,19 @@ a:link, a:visited, a:hover, a:active {
     text-decoration: none;
     color: #359AFF;
     font-family: "Arial", "Microsoft YaHei", "黑体", sans-serif;
+}
+
+#musicPlay{
+    opacity: 0.5;
+    border: 2px solid rgba(255,255,255,1);
+    border-radius: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 10;
+}
+
+body{
+    background-color: black;
 }
