@@ -35,7 +35,7 @@
         AFRAME.registerComponent('tap-place', {
             init: function () {
                 const ground = document.getElementById('ground')
-                ground.addEventListener('mousedown', event => {
+                ground.addEventListener('click', event => {
                     // Create new entity for the new object
                     const newElement = document.createElement('a-entity')
 
@@ -63,7 +63,7 @@
                             dur: 800,
                         })
                         newElement.setAttribute('rotation', '0 0 0')
-                        // newElement.setAttribute('navonclick', 'url: index.html')
+                        // newElement.setAttribute('navonclick', 'url: room.html')
                     })
                 }, {once: true})
             }
@@ -74,16 +74,15 @@
         setInterval(function () {
             if (document.getElementById("house") != null) {
                 document.getElementById("nextbutton").style.display = "block";
-                document.getElementById("nextbutton").style.fontSize = "2rem";
             }
         }, 50)
     </script>
 </head>
 
 <body>
-<div class="nextbutton" id="nextbutton">
-    <a href="index.html">Next ></a>
-</div>
+<a href="room.html">
+    <div class="nextbutton" id="nextbutton">进入小屋</div>
+</a>
 
 <a-scene
         xrweb
