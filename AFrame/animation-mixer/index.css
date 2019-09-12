@@ -1,19 +1,34 @@
 div.nextbutton {
     z-index: 10;
     width: 33%;
-    height: 10%;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #7611B7;
+    /*width: 20rem;*/
+    height: 5rem;
     text-align: center;
-    color: #FFFFFF;
     vertical-align: middle;
+    /*position: relative;*/
     user-select: none;
-  display: none;
+    display: none;
+    /*margin: 2rem auto;*/
+    margin-left: -2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 0px;
+    left: 36%;
+    background: -webkit-linear-gradient(white, white, white, white, #CCFFFF); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(white, white, white, white, #CCFFFF); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(white, white, white, white, #CCFFFF); /* Firefox 3.6 - 15 */
+    background: linear-gradient(white, white, white, white, #CCFFFF); /* 标准的语法 */
+}
+
+div.nextbutton a {
+    text-align: center;
+    height: 5rem;
+    font-size: 2rem;
+    line-height: 5rem;
 }
 
 a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
-  color: #359AFF;
+    text-decoration: none;
+    color: #359AFF;
 }
