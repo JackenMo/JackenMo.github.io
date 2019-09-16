@@ -88,7 +88,7 @@
     <a href="room.html" id="nextbutton">
         <div class="nextbutton">进入小屋</div>
     </a>
-    
+
     <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity>
 
     <!-- We can define assets here to be loaded when A-Frame initializes -->
@@ -133,16 +133,16 @@
             scene.addEventListener('loaded', run);
         }
 
+        var audio = document.getElementById("bgMusic");
         function run() {
             setInterval(function () {
                 if (document.getElementById("house") != null) {
                     document.getElementById("nextbutton").style.display = "block";
                 }
             }, 50)
+            audio.play();
         }
 
-        var audio = document.getElementById("bgMusic");
-        window.onload= audio.play();
         function playPause() {
             if (audio.paused) {
                 audio.play();

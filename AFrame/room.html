@@ -22,58 +22,24 @@
 
                 el.addEventListener('click', function () {
                     window.location.href = data.url;
-                    // playPause();
                 });
             }
-        });
-        AFRAME.registerComponent('clickplay', {
-            schema: {
-                url: {default: ''}
-            },
-
-            init: function () {
-                var data = this.data;
-                var el = this.el;
-
-                el.addEventListener('click', function () {
-                    var entity = document.querySelector('[sound]');
-                    if()
-                    entity.components.sound.pauseSound();
-                });
-            }
-        });
-    </script>
-    <script>
-        function playPause() {
-            var audio = document.getElementById("bgMusic");
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        }
+        })
     </script>
 </head>
 
 <body>
-<!--<audio id="bgMusic" src="JingleBells.mp3" autoplay="autoplay" loop="loop"></audio>-->
-
-<div id="musicPlay" onclick="playPause()">
-    🎶
-</div>
 
 <a-scene>
 
+    <audio id="bgMusic" src="JingleBells.mp3" autoplay="autoplay" loop="loop"></audio>
 
+    <a href="javascript:" id="musicPlay" onclick="playPause()">
+        🎶
+    </a>
 
-    <a-entity id="camera" camera position="1 1.5 1" look-controls cursor="rayOrigin: mouse">
-<!--        <a-entity text="value: Music; width: 1;" position="1 .5 -1">-->
-<!--        </a-entity>-->
-        <a-image src="img/bell.png" height=".01" width=".01" position="0 0.15 -0.2"></a-image>
-        <a-sound preload="auto" src="src: url(JingleBells.mp3)" autoplay="true" loop="true"></a-sound>
-<!--        <a-entity id="bell" geometry="primitive: plane" material="color: blue"-->
-<!--                  position="0 0 -1" sound="src: url(JingleBells.mp3); autoplay: true; loop=true"></a-entity>-->
-    </a-entity>
+    <a-entity id="camera" camera position="1 1.5 1" look-controls cursor="rayOrigin: mouse"></a-entity>
+
     <a-assets>
         <a-asset-item id="ALL" src="GLTF/ALL.gltf"></a-asset-item>
         <a-asset-item id="SETs" src="GLTF/KIT_s.gltf"></a-asset-item>
@@ -95,6 +61,35 @@
         <a-image class="js-open-box" src="img/img (4).jpg" position="1.12 1.795 0" height=".17" width=".34"
                  navigate-on-click="url: img4.html"></a-image>
     </a-entity>
+
+    <script>
+        var scene = document.querySelector('a-scene');
+
+        if (scene.hasLoaded) {
+            run();
+        } else {
+            scene.addEventListener('loaded', run);
+        }
+
+        var audio = document.getElementById("bgMusic");
+
+        function run() {
+            setInterval(function () {
+                if (document.getElementById("house") != null) {
+                    document.getElementById("nextbutton").style.display = "block";
+                }
+            }, 50)
+            audio.play();
+        }
+
+        function playPause() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
 </a-scene>
 </body>
 </html>
