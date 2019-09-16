@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" type="text/css" href="animation-mixer/index.css">
 
+    <script src="JS/aframe-particle-system-component.min.js"></script>
+
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script type="text/javascript"
             src="https://api.map.baidu.com/api?v=3.0&ak=CqubwDmuDc6oFRXAZoAkiHdqagQpreM0"></script>
@@ -29,6 +31,25 @@
     <!--            }-->
     <!--        });-->
     <!--    </script>-->
+
+    <script>
+        AFRAME.registerComponent('playpause', {
+            init: function () {
+                var data = this.data;
+                var el = this.el;
+
+                el.addEventListener('click', function () {
+                        var audio = document.getElementById("bgMusic");
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                        }
+                    }
+                )
+            }
+        });
+    </script>
 
     <script>
         // Component that places trees where the ground is clicked
@@ -69,28 +90,34 @@
             }
         })
     </script>
-
-    <script>
-        setInterval(function () {
-            if (document.getElementById("house") != null) {
-                document.getElementById("nextbutton").style.display = "block";
-            }
-        }, 50)
-    </script>
 </head>
 
 <body>
-<a href="room.html">
-    <div class="nextbutton" id="nextbutton">进入小屋</div>
-</a>
-
 <a-scene
         xrweb
         tap-place
         xrextras-almost-there
         xrextras-loading
         xrextras-runtime-error>
+
+    <audio id="bgMusic" src="JingleBells.mp3" autoplay="autoplay" loop="loop"></audio>
+
     <a-sky src="img/v23.jpg" rotation="0 0 0"></a-sky>
+
+<!--    <div id="musicPlay" onclick="playPause()">-->
+<!--        🎶-->
+<!--    </div>-->
+
+    <a href="javascript:" id="musicPlay" onclick="playPause()">
+        🎶
+    </a>
+
+    <a href="room.html" id="nextbutton">
+        <div class="nextbutton">进入小屋</div>
+    </a>
+
+    <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity>
+
     <!-- We can define assets here to be loaded when A-Frame initializes -->
     <a-assets>
         <a-asset-item id="KTC" src="GLTF/ALL.gltf"></a-asset-item>
@@ -99,6 +126,9 @@
     <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
 
     <a-entity id="camera" camera position="0 8 0" look-controls cursor="rayOrigin: mouse"></a-entity>
+
+    <!--    <a-entity position="0 0.4 0" geometry="primitive: plane; width: auto; height: auto" material="color: #eee" text="color: blue; align: center; value: [CENTER ALIGNED]; width: 2; ">-->
+    <!--    </a-entity>-->
 
     <a-entity
             light="type: directional;
@@ -117,6 +147,34 @@
             scale="1000 2 1000"
             position="0 -1 0">
     </a-entity>
+
+    <script>
+        var scene = document.querySelector('a-scene');
+
+        if (scene.hasLoaded) {
+            run();
+        } else {
+            scene.addEventListener('loaded', run);
+        }
+
+        function run() {
+            setInterval(function () {
+                if (document.getElementById("house") != null) {
+                    document.getElementById("nextbutton").style.display = "block";
+                }
+            }, 50)
+        }
+
+        var audio = document.getElementById("bgMusic");
+        window.onload= audio.play();
+        function playPause() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
 </a-scene>
 </body>
 </html>

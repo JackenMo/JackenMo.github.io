@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title>place</title>
+    <link rel="stylesheet" type="text/css" href="animation-mixer/index.css">
     <link rel="stylesheet" type="text/css" href="CSS/index.css"/>
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="http://code.jquery.com/jquery-2.2.4.min.js"
@@ -21,16 +22,58 @@
 
                 el.addEventListener('click', function () {
                     window.location.href = data.url;
+                    // playPause();
+                });
+            }
+        });
+        AFRAME.registerComponent('clickplay', {
+            schema: {
+                url: {default: ''}
+            },
+
+            init: function () {
+                var data = this.data;
+                var el = this.el;
+
+                el.addEventListener('click', function () {
+                    var entity = document.querySelector('[sound]');
+                    if()
+                    entity.components.sound.pauseSound();
                 });
             }
         });
     </script>
+    <script>
+        function playPause() {
+            var audio = document.getElementById("bgMusic");
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
 </head>
 
-
 <body>
+<!--<audio id="bgMusic" src="JingleBells.mp3" autoplay="autoplay" loop="loop"></audio>-->
+
+<div id="musicPlay" onclick="playPause()">
+    🎶
+</div>
+
 <a-scene>
-    <a-entity id="camera" camera position="1 1.5 1" look-controls cursor="rayOrigin: mouse"></a-entity>
+
+
+
+    <a-entity id="camera" camera position="1 1.5 1" look-controls cursor="rayOrigin: mouse">
+<!--        <a-entity text="value: Music; width: 1;" position="1 .5 -1">-->
+<!--        </a-entity>-->
+        <a-image src="img/bell.png" height=".01" width=".01" position="0 0.15 -0.2"></a-image>
+        <a-sound preload="auto" src="src: url(JingleBells.mp3)" autoplay="true" loop="true"></a-sound>
+<!--        <a-entity id="bell" geometry="primitive: plane" material="color: blue"-->
+<!--                  position="0 0 -1" sound="src: url(JingleBells.mp3); autoplay: true; loop=true"></a-entity>-->
+    </a-entity>
     <a-assets>
         <a-asset-item id="ALL" src="GLTF/ALL.gltf"></a-asset-item>
         <a-asset-item id="SETs" src="GLTF/KIT_s.gltf"></a-asset-item>
@@ -38,13 +81,6 @@
         <a-asset-item id="CNug" src="GLTF/ChickenNuggets.gltf"></a-asset-item>
         <a-asset-item id="CBur" src="GLTF/CheeseBurger.gltf"></a-asset-item>
     </a-assets>
-
-    <!--    <a-entity gltf-model="#ALL" id="ALL_E" position="0 0 0">-->
-    <!--        <a-entity light="type: directional; color: #EEE; intensity: 0.2" position="0 10 2"></a-entity>-->
-    <!--        <a-entity light="type: spot; color: #EEE; intensity: 0.2" position="0 10 -5"></a-entity>-->
-    <!--        <a-entity light="type: ambient; color: #FFF; intensity: 1"></a-entity>-->
-    <!--&lt;!&ndash;        <a-entity gltf-model="#CBur" id="CBur_E" rotation="0 265 0" position="1 -0.008 0.2"></a-entity>&ndash;&gt;-->
-    <!--    </a-entity>-->
 
     <a-entity gltf-model="#SETs" id="SETs_E" position="0 0 0">
         <a-entity light="type: directional; color: #EEE; intensity: 0.2" position="0 10 2"></a-entity>
@@ -60,11 +96,5 @@
                  navigate-on-click="url: img4.html"></a-image>
     </a-entity>
 </a-scene>
-
-<div class="box-login">
-    这里是弹窗内容
-</div>
-
-<div class="overlay"></div>
 </body>
 </html>
