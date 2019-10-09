@@ -2,18 +2,19 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>8th Wall Web</title>
-
-    <link rel="stylesheet" type="text/css" href="animation-mixer/index.css">
+    <title>8th Wall Web: Manipulate</title>
 
     <!-- We've included a slightly modified version of A-Frame, which fixes some polish concerns -->
     <script src="//cdn.8thwall.com/web/aframe/8frame-0.8.2.min.js"></script>
-    <script src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
-    <script src="//cdn.8thwall.com/web/aframe/aframe-extras-4.2.0.min.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="hold-drag.js"></script>
+    <script src="pinch-scale.js"></script>
+    <script src="two-finger-spin.js"></script>
 
     <!-- XR Extras - provides utilities like load screen, almost there, and error handling.
          See github.com/8thwall/web/xrextras -->
     <script defer src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+    <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
 
     <!-- 8thWall Web - Replace the app key here with your own app key -->
     <script async
@@ -38,20 +39,25 @@
                     newElement.setAttribute('visible', 'false')
                     newElement.setAttribute('scale', '0.0001 0.0001 0.0001')
 
-                    newElement.setAttribute('gltf-model', '#KTC')
+                    newElement.setAttribute('gltf-model', '#Bear')
                     this.el.sceneEl.appendChild(newElement)
 
                     newElement.addEventListener('model-loaded', () => {
                         // Once the model is loaded, we are ready to show it popping in using an animation
                         newElement.setAttribute('visible', 'true')
-                        newElement.setAttribute('id', 'house')
                         newElement.setAttribute('animation', {
                             property: 'scale',
-                            to: '0.03 0.03 0.03',
+                            to: '0.2 0.2 0.2',
                             easing: 'easeOutElastic',
                             dur: 800,
                         })
                     })
+
+                    // class="cantap" hold-drag two-finger-spin pinch-scale
+                    newElement.setAttribute('class', 'cantap')
+                    newElement.setAttribute(hold-drag)
+                    newElement.setAttribute(two-finger-spin)
+                    newElement.setAttribute(pinch-scale)
                 }, {once: true})
             }
         })
@@ -59,28 +65,30 @@
 </head>
 
 <body>
-
-
-<!-- We must add the tap-place component to the scene so it has an effect -->
 <a-scene
         xrweb
         tap-place
+        gesture-detector
         xrextras-almost-there
         xrextras-loading
         xrextras-runtime-error>
+
     <!-- We can define assets here to be loaded when A-Frame initializes -->
     <a-assets>
-        <a-asset-item id="KTC" src="Models/JCBear.glb"></a-asset-item>
+        <!-- Credit to Poly by Google for the model: https://poly.google.com/view/5ZMAz7_ucTn -->
+        <a-asset-item id="sandCastleModel" src="sand-castle.glb"></a-asset-item>
+        <a-asset-item id="Bear" src="Models/JCBear.glb"></a-asset-item>
     </a-assets>
 
     <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
     <a-camera
-            position="0 0 0"
+            id="camera"
+            position="0 8 8"
             raycaster="objects: .cantap"
             cursor="
           fuse: false;
           rayOrigin: mouse;">
-
+        </a-entity>
     </a-camera>
 
     <a-entity
@@ -91,7 +99,9 @@
 
     <a-light type="ambient" intensity="1"></a-light>
 
-    <!-- Adding the cantap class allows the ground to be clicked -->
+    <a-entity gltf-model="#sandCastleModel" class="cantap" hold-drag two-finger-spin pinch-scale
+              scale="0.025 0.025 0.025"></a-entity>
+
     <a-entity
             id="ground"
             class="cantap"
