@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+  minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- 💁 Include both scripts below to support all browsers! -->
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module"
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+    </script>
+
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script nomodule
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+    </script>
+
+    <link type="text/css" rel="stylesheet" href="css/examples.css">
+
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+
+    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <script src="js/webcomponents-loader.js"></script>
+
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="js/intersection-observer.js"></script>
+
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="js/ResizeObserver.js"></script>
+
+    <!-- 💁 OPTIONAL: Fullscreen polyfill is needed to fully support AR features -->
+    <script src="js/fullscreen.polyfill.js"></script>
+
+    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="js/focus-visible.js" defer></script>
+
+    <style>
+        div {
+            font-size: 2rem;
+            z-index: 10;
+            /*width: 30%;*/
+            /*height: 4.5rem;*/
+            user-select: none;
+            /*display: block;*/
+            /*border-radius: 1rem;*/
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 2rem auto;
+        }
+
+        model-viewer{
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+<!--<div class="sample">-->
+<!--    <div id="demo-container-1" class="demo"></div>-->
+<!--    <div class="content">-->
+<!--        <div class="wrapper">-->
+
+<!--            <a class="lockup" href="../index.html">-->
+<!--                <div class="icon-button icon-modelviewer-black"></div>-->
+<!--                <h1>examples</h1></a>-->
+<!--            <div class="heading">-->
+<!--                <h2 class="demo-title">Augmented Reality</h2>-->
+<!--                <h4>This demonstrates several augmented reality features, including <code>unstable-webxr</code>, <code>magic-leap</code>,-->
+<!--                    <code>ios-src</code>, &amp; the accompanying attribute <code>quick-look-browsers</code>.</h4>-->
+<!--            </div>-->
+<!--            <template>-->
+<!--                <model-viewer src="assets/Astronaut.glb" ar camera-controls alt="A 3D model of an astronaut"-->
+<!--                              background-color="#222" ios-src="assets/Astronaut.usdz" magic-leap-->
+<!--                              unstable-webxr></model-viewer>-->
+<!--            </template>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<model-viewer src="assets/Astronaut.glb" ios-src="assets/Astronaut.usdz" ar camera-controls
+              alt="A 3D model of an astronaut" background-color="#222" magic-leap unstable-webxr
+              shadow-intensity="1"></model-viewer>
+
+<!--<div>1008665535HelloWorld</div>-->
+
+</body>
+</html>
