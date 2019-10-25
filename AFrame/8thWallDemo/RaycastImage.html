@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>8th Wall Raycast a-image</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="//cdn.8thwall.com/web/aframe/8frame-0.8.2.min.js"></script>
+    <script async
+            src="//apps.8thwall.com/xrweb?appKey=yQuHDZG37SGLBSHGZuBN9ZvLSIzCbSnU95VbYEfCAW1AtPQxxoqF5IT7QTZwuqB5UmHMBp"></script>
+
+    <script>
+        AFRAME.registerComponent('shadow-material', {
+            init: function () {
+                this.material = new THREE.ShadowMaterial()
+                this.el.getOrCreateObject3D('mesh').material = this.material
+                this.material.opacity = 0.4
+            }
+
+        });
+
+        AFRAME.registerComponent('tap-info', {
+            init: function () {
+                this.el.addEventListener('click', function () {
+                    alert('image tapped!');
+                });
+            }
+        });
+
+    </script>
+
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+</head>
+
+<body>
+<a-scene xrweb
+         xrextras-almost-there
+         xrextras-loading
+         xrextras-runtime-error
+         background="color: #FAFAFA">
+    <a-camera
+            position="0 1.8 0"
+            raycaster="objects: .cantap"
+            cursor="
+          fuse: false;
+          rayOrigin: mouse;"></a-camera>
+
+    <a-entity
+            light="type: directional;
+               intensity: 1;
+               castShadow: true;
+               shadowMapHeight: 1024;
+               shadowMapWidth: 1024;
+               shadowCameraTop: 10;"
+            position="1 4.3 2.5"
+            shadow>
+    </a-entity>
+
+    <a-image
+            position="0 1 -2"
+            height="1.8"
+            width="1"
+            class="cantap"
+            src="https://cdn.glitch.com/e9ba5c8a-0f92-4729-8915-c1adad9dbf67%2FD2DFE4B5-332F-429E-A4BE-CA222BB0C082.jpeg"
+            tap-info
+    ></a-image>
+
+    <a-entity
+            light="type: ambient;
+               intensity: 0.5;">
+    </a-entity>
+
+    <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
+    <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
+    <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="50" height="50" color="#7BC8A4" shadow
+             shadow-material></a-plane>
+</a-scene>
+</body>
+</html>

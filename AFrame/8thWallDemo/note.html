@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <title>floatnotes</title>
+
+    <script src="//cdn.8thwall.com/web/aframe/8frame-0.9.0.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
+
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+    <script src="../JS/helper-components.js"></script>
+
+    <!-- 8thWall (wrapper always required) -->
+    <script async
+            src="//apps.8thwall.com/xrweb?appKey=yQuHDZG37SGLBSHGZuBN9ZvLSIzCbSnU95VbYEfCAW1AtPQxxoqF5IT7QTZwuqB5UmHMBp"></script>
+
+    <link rel="stylesheet" href="../CSS/note.css" type="text/css">
+
+</head>
+<body>
+
+<div id="overlay">
+
+    <img id="dropButton" src="https://cdn.glitch.com/e2248260-4b6a-4f32-a958-fdaa11e66ebe%2Ftrash.svg">
+
+    <img id="createNoteButton"
+         src="https://cdn.glitch.com/e2248260-4b6a-4f32-a958-fdaa11e66ebe%2Fnewnote.png">
+
+    <form onsubmit="document.getElementById('noteInput').blur(); event.preventDefault(); return false;">
+        <input id="noteInput"
+               type="text">
+    </form>
+
+</div> <!--End overlay-->
+
+<a-scene
+        xrweb
+        antialias="true"
+        xrextras-almost-there
+        xrextras-loading
+        xrextras-runtime-error
+        note-creator>
+
+    <a-camera
+            id="camera"
+            position="0 4 0"
+            raycaster="objects: .note"
+            cursor="
+          fuse: false;
+          rayOrigin: mouse;">
+
+        <a-entity id="holdAnchor" position="0 0 -3"></a-entity>
+
+    </a-camera>  <!-- /camera -->
+
+    <a-entity id="ground" geometry="primitive: box" shadow="cast: false" shadow-material
+              scale="1000 2 1000" position="0 -1 0" static-body></a-entity>
+
+    <!--  Lights -->
+
+    <a-entity
+            light="type: directional;
+             intensity: 0.8;
+             castShadow: true;
+             shadowMapHeight:2048;
+             shadowMapWidth:2048;
+             shadowCameraNear: -5;
+             shadowCameraRight: 25;
+             shadowCameraLeft: -25;
+             shadowCameraTop: 25;
+             shadowCameraBottom: -25;"
+            position="0.5 8 0"
+            shadow></a-entity>
+
+    <!--       <a-light
+            id="dirLight"
+            position="-3 5 4"
+            intensity="1"
+            light="castShadow: true;
+              shadowMapHeight: 2048;
+              shadowMapWidth: 2048"></a-light> -->
+
+    <a-light
+            id="ambientLight"
+            type="ambient"
+            intensity="0.9"></a-light>
+</a-scene>
+</body>
+</html>

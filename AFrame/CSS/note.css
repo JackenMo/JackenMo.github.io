@@ -1,0 +1,59 @@
+body {
+    font-family: monospace;
+    box-sizing: border-box;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#createNoteButton {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    z-index: 5;
+}
+
+#noteInput {
+    opacity: 0.01;
+    position: absolute;
+    right:0;
+    max-height: 50vh;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    text-shadow: 0 0px 2vmin black;
+    font-size: 15vmin;
+    padding:10vmin;
+    z-index: 5;
+}
+
+#dropButton {
+    position: absolute;
+    top: 92.5%;
+    left: 15%;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+    z-index: 5;
+}
+
+.pulse-once { animation: pulse-once 0.2s cubic-bezier(0.785, 0.135, 0.150, 0.860) both; }
+@keyframes pulse-once {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.8);}
+    100% {transform: scale(1);}
+}
