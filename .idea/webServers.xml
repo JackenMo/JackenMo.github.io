@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="b9ff52c0-631b-4466-9c23-06065d39f736" name="localhost" url="http://192.168.123.19:8081">
-        <fileTransfer port="0" mountedRoot="E:\Web" accessType="MOUNT" />
+      <webServer id="b9ff52c0-631b-4466-9c23-06065d39f736" name="localhost" url="http://192.168.123.118:8081">
+        <fileTransfer port="0" mountedRoot="D:\WebAR\GitWeb" accessType="MOUNT" />
       </webServer>
     </option>
   </component>

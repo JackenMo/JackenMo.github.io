@@ -2,39 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-
-        #nextJump {
-            z-index: 10;
-            width: 30%;
-            height: 4.5rem;
-            user-select: none;
-            /*display: none;*/
-            border-radius: 1rem;
-            position: absolute;
-            bottom: 0;
-            left:0;
-            right:0;
-            margin: 2rem auto;
-            /*border: 1px solid black;*/
-            background: -webkit-linear-gradient(white, white, white, white, #CCFFFF); /* Safari 5.1 - 6.0 */
-            background: -o-linear-gradient(white, white, white, white, #CCFFFF); /* Opera 11.1 - 12.0 */
-            background: -moz-linear-gradient(white, white, white, white, #CCFFFF); /* Firefox 3.6 - 15 */
-            background: linear-gradient(white, white, white, white, #CCFFFF); /* 标准的语法 */
-        }
-
-        div.nextJump {
-            width: 100%;
-            text-align: center;
-            font-size: 1.5rem;
-            line-height: 4.5rem;
-        }
-    </style>
+    <title>颜色闪缩</title>
+    <script src="./jquery-3.3.1.js"> </script>
 </head>
 <body>
-<a href="room.html" id="nextJump">
-    <div class="nextJump">进入小屋</div>
-</a>
+<div id="color_flash">
+    <div class="lit_slashNum" style="transition: all 0.5s; background-color: #ff0000;-moz-box-shadow:0px 0px 10px 2px #ff0000; -webkit-box-shadow:0px 0px 10px 2px #ff0000; box-shadow:0px 0px 10px 2px #ff0000;"></div>
+</div>
+
+
 </body>
+<script>
+    setInterval(changeColor,500);
+
+    //js
+    var colorFlag = 0;
+    function changeColor() {
+        let lit_slashNum = document.querySelector(".lit_slashNum");
+        if (!colorFlag)
+        {
+            lit_slashNum.style.backgroundColor = '#ff0000';
+            lit_slashNum.style.boxShadow = '0px 500px 100px 500px #ff0000';
+            colorFlag = 1;
+        }else{
+            lit_slashNum.style.backgroundColor = '';
+            lit_slashNum.style.boxShadow = '';
+            colorFlag = 0;
+        }
+    }
+
+    // jq
+    // function litSlash(){
+    //     $(".lit_slashNum").animate(
+    //         {opacity:"0"},250); //改变透明度
+    //     $(".lit_slashNum").animate(
+    //         {opacity:"1"},500);
+    // }
+</script>
 </html>

@@ -1,43 +1,31 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <title>Tap to place</title>
-
-    <link rel="stylesheet" type="text/css" href="animation-mixer/index.css">
-
-    <script src="JS/aframe-particle-system-component.min.js"></script>
-
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script type="text/javascript"
-            src="https://api.map.baidu.com/api?v=3.0&ak=CqubwDmuDc6oFRXAZoAkiHdqagQpreM0"></script>
-    <!--    <script>-->
-    <!--        AFRAME.registerComponent('navonclick', {-->
-    <!--            schema: {-->
-    <!--                url: {default: ''}-->
-    <!--            },-->
+    <script>
+        AFRAME.registerComponent('on-click-hand', {
+            schema: {
+                url: {default: ''}
+            },
 
-    <!--            init: function () {-->
-    <!--                var data = this.data;-->
-    <!--                var el = this.el;-->
+            init: function () {
+                var data = this.data;
+                var el = this.el;
 
-    <!--                el.addEventListener('click', function () {-->
-    <!--                    setTimeout(-->
-    <!--                        function () {-->
-    <!--                            window.location.href = data.url;//事件处理-->
-    <!--                        }, 500)-->
-    <!--                });-->
-    <!--            }-->
-    <!--        });-->
-    <!--    </script>-->
-
+                el.addEventListener('click', function () {
+                    window.location.href = data.url;
+                });
+            }
+        })
+    </script>
 
     <script>
         // Component that places trees where the ground is clicked
         AFRAME.registerComponent('tap-place', {
             init: function () {
-                const ground = document.getElementById('ground')
+                const ground = document.getElementById('box')
                 ground.addEventListener('click', event => {
                     // Create new entity for the new object
                     const newElement = document.createElement('a-entity')
@@ -50,7 +38,7 @@
                     newElement.setAttribute('rotation', '0 ' + randomYRotation + ' 0')
 
                     newElement.setAttribute('visible', 'false')
-                    newElement.setAttribute('scale', '0.0001 0.0001 0.0001')
+                    newElement.setAttribute('scale', '0.01 0.01 0.01')
 
                     newElement.setAttribute('gltf-model', '#KTC')
                     this.el.sceneEl.appendChild(newElement)
@@ -61,7 +49,7 @@
                         newElement.setAttribute('id', 'house')
                         newElement.setAttribute('animation', {
                             property: 'scale',
-                            to: '1 1 1',
+                            to: '2 2 2',
                             easing: 'easeOutElastic',
                             dur: 800,
                         })
@@ -75,35 +63,25 @@
 </head>
 
 <body>
+
 <a-scene
         xrweb
-        tap-place
         xrextras-almost-there
         xrextras-loading
         xrextras-runtime-error>
 
-    <audio id="bgMusic" src="JingleBells.mp3" autoplay="autoplay" loop="loop"></audio>
-
-    <a-sky src="img/v23.jpg" rotation="0 0 0"></a-sky>
-
-    <a href="javascript:" id="musicPlay" onclick="playPause()">
-        🎶
-    </a>
-
-    <a href="room.html" id="nextbutton">
-        <div class="nextbutton">进入小屋</div>
-    </a>
+    <a-sky src="Models/Simon.png" color="#FFFFFF" rotation="0 0 0" id="background"></a-sky>
 
     <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity>
 
     <!-- We can define assets here to be loaded when A-Frame initializes -->
     <a-assets>
-        <a-asset-item id="KTC" src="GLTF/ALL.gltf"></a-asset-item>
+        <a-asset-item id="KTC" src="Models/shoeW.glb"></a-asset-item>
     </a-assets>
 
     <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
 
-    <a-entity id="camera" camera position="0 8 0" look-controls cursor="rayOrigin: mouse"></a-entity>
+    <a-entity id="camera" camera position="0 5 0" look-controls cursor="rayOrigin: mouse"></a-entity>
 
     <!--    <a-entity position="0 0.4 0" geometry="primitive: plane; width: auto; height: auto" material="color: #eee" text="color: blue; align: center; value: [CENTER ALIGNED]; width: 2; ">-->
     <!--    </a-entity>-->
@@ -114,7 +92,7 @@
             position="1 4.3 2.5">
     </a-entity>
 
-    <a-light type="ambient" intensity="1"></a-light>
+    <a-box id="box" tap-place position="0 3 -5"></a-box>
 
     <!-- Adding the cantap class allows the ground to be clicked -->
     <a-entity
@@ -126,33 +104,72 @@
             position="0 -1 0">
     </a-entity>
 
-    <script>
-        var scene = document.querySelector('a-scene');
+</a-scene>
+</div>
 
-        if (scene.hasLoaded) {
-            run();
+<script>
+    timer = setInterval(changeColor, 5);
+
+    document.onkeydown = function (e) {    //对整个页面监听
+        var keyNum = window.event ? e.keyCode : e.which;       //获取被按下的键值
+        //判断如果用户按下了回车键（keycody=13）
+        if (keyNum == 13) {
+            clearInterval(timer);
+        }
+        if (keyNum == 32) {
+            timer = setInterval(changeColor, 10);
+        }
+    }
+
+    var r = 255
+    var g = 255
+    var b = 255
+    var colorFlag = 1
+
+    // var colorFlag = 1
+
+    function changeColor() {
+        let backColor = document.getElementById("background")
+
+        var rgb = "#" + r.toString(16) + g.toString(16) + b.toString(16)
+
+
+        backColor.setAttribute("color", rgb);
+
+        if (colorFlag) {
+            g -= 1
+            b = g
+            if (g < 50) {
+                colorFlag = 0;
+            }
         } else {
-            scene.addEventListener('loaded', run);
-        }
-
-        function run() {
-            setInterval(function () {
-                if (document.getElementById("house") != null) {
-                    document.getElementById("nextbutton").style.display = "block";
-                }
-            }, 50)
-        }
-
-        var audio = document.getElementById("bgMusic");
-        window.onload= audio.play();
-        function playPause() {
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
+            g += 1
+            b = g
+            if (g > 255) {
+                colorFlag = 1;
             }
         }
-    </script>
-</a-scene>
+        //
+        // if (!colorFlag) {
+        //     g -= 1
+        //     b = g
+        //     rgb = "#" + r.toString(16) + g.toString(16) + b.toString(16);
+        //     //toString(radix) 把数字转化为radix（取值范围2~36）进制值表示的字符串
+        //     backColor.setAttribute("color", rgb);
+        //     if (g < 50) {
+        //         colorFlag = 1;
+        //     }
+        // } else {
+        //     g += 1
+        //     b = g
+        //     rgb = r.toString(16) + g.toString(16) + b.toString(16);
+        //     //toString(radix) 把数字转化为radix（取值范围2~36）进制值表示的字符串
+        //     backColor.setAttribute("color", rgb);
+        //     if (g > 254) {
+        //         colorFlag = 0;
+        //     }
+        // }
+    }
+</script>
 </body>
 </html>
