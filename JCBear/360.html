@@ -46,7 +46,7 @@
                     newElement.addEventListener('model-loaded', () => {
                         // Once the model is loaded, we are ready to show it popping in using an animation
                         newElement.setAttribute('visible', 'true')
-                        newElement.setAttribute('id', 'house')
+                        newElement.setAttribute('id', 'hand')
                         newElement.setAttribute('animation', {
                             property: 'scale',
                             to: '2 2 2',
@@ -93,6 +93,8 @@
     </a-entity>
 
     <a-box id="box" tap-place position="0 3 -5"></a-box>
+    <a-box id="choose" tap-place position="1.5 3 -5"></a-box>
+    <a-box id="press" tap-place position="3 3 -5"></a-box>
 
     <!-- Adding the cantap class allows the ground to be clicked -->
     <a-entity
