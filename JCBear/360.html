@@ -5,7 +5,7 @@
     <title>Tap to place</title>
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script>
-        AFRAME.registerComponent('on-click-hand', {
+        AFRAME.registerComponent('navigate-on-click', {
             schema: {
                 url: {default: ''}
             },
@@ -54,12 +54,12 @@
                             dur: 800,
                         })
                         newElement.setAttribute('rotation', '0 0 0')
-                        // newElement.setAttribute('navonclick', 'url: room.html')
                     })
                 }, {once: true})
             }
         })
     </script>
+
 </head>
 
 <body>
@@ -72,29 +72,42 @@
 
     <a-sky src="Models/Simon.png" color="#FFFFFF" rotation="0 0 0" id="background"></a-sky>
 
-    <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity>
-
     <!-- We can define assets here to be loaded when A-Frame initializes -->
     <a-assets>
         <a-asset-item id="KTC" src="Models/shoeW.glb"></a-asset-item>
+
     </a-assets>
 
     <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
 
-    <a-entity id="camera" camera position="0 5 0" look-controls cursor="rayOrigin: mouse"></a-entity>
-
-    <!--    <a-entity position="0 0.4 0" geometry="primitive: plane; width: auto; height: auto" material="color: #eee" text="color: blue; align: center; value: [CENTER ALIGNED]; width: 2; ">-->
-    <!--    </a-entity>-->
-
-    <a-entity
-            light="type: directional;
-               intensity: 0.8;"
-            position="1 4.3 2.5">
+    <a-entity id="camera" camera position="0 5 0" look-controls cursor="rayOrigin: mouse">
+        <a-box id="colorUI" position="0 0 2" scale="4 3 .1">
+            <a-image id="close" src="img/ring5.png" position="0.4 0.37 0.5" scale="0.37 0.5 1"></a-image>
+            <a-box position="0 0 .5" color="#777777" scale="1 .4 .1">
+                <a-box id="colorWhite" position="-.35 0 .5" scale=".1 .7 .1" color="#FFFFFF"
+                       choosecolor></a-box>
+                <a-box id="colorGreen" position="-.17 0 .5" scale=".1 .7 .1" color="#00FF00"
+                       choosecolor ></a-box>
+                <a-box id="colorBlue" position="0 0 .5" scale=".1 .7 .1" color="#0000FF"
+                       choosecolor></a-box>
+                <a-box id="colorPurple" position=".17 0 .5" scale=".1 .7 .1" color="#8800FF"
+                       choosecolor></a-box>
+                <a-box id="colorRed" position=".35 0 .5" scale=".1 .7 .1" color="#FF0000"
+                       choosecolor></a-box>
+            </a-box>
+            <a-box id="jump" position="0 -.35 .5" color="#111111" scale=".3 .2 .1" jumpnew>
+            </a-box>
     </a-entity>
 
+    <a-entity>
+        <a-entity light="type: directional; intensity: 0.4;" position="1 4.3 2.5"></a-entity>
+        <a-entity light="type: ambient; color: #FFF; intensity: .7"></a-entity>
+    </a-entity>
+
+
     <a-box id="box" tap-place position="0 3 -5"></a-box>
-    <a-box id="choose" tap-place position="1.5 3 -5"></a-box>
-    <a-box id="press" tap-place position="3 3 -5"></a-box>
+    <a-box id="choose" showui tap-place position="1.5 3 -5"></a-box>
+    <a-box id="press" alarm tap-place position="3 3 -5"></a-box>
 
     <!-- Adding the cantap class allows the ground to be clicked -->
     <a-entity
@@ -110,68 +123,108 @@
 </div>
 
 <script>
-    timer = setInterval(changeColor, 5);
+    var timer = setInterval(changeColor, 0)
+    clearInterval(timer)
+    let backColor = document.getElementById("background")
 
-    document.onkeydown = function (e) {    //对整个页面监听
-        var keyNum = window.event ? e.keyCode : e.which;       //获取被按下的键值
-        //判断如果用户按下了回车键（keycody=13）
-        if (keyNum == 13) {
-            clearInterval(timer);
+    var alarmFlag = 0
+    AFRAME.registerComponent('alarm', {
+        init: function () {
+            const alarmButton = document.getElementById('press')
+            alarmButton.addEventListener('click', function (evt) {
+                if (!alarmFlag) {
+                    timer = setInterval(changeColor, 10)
+                    alarmFlag = 1
+                } else {
+                    backColor.setAttribute("color", "#FFFFFF");
+                    clearInterval(timer)
+                    alarmFlag = 0
+                }
+            })
         }
-        if (keyNum == 32) {
-            timer = setInterval(changeColor, 10);
-        }
-    }
+    })
 
     var r = 255
     var g = 255
     var b = 255
     var colorFlag = 1
 
-    // var colorFlag = 1
-
     function changeColor() {
-        let backColor = document.getElementById("background")
-
         var rgb = "#" + r.toString(16) + g.toString(16) + b.toString(16)
-
-
-        backColor.setAttribute("color", rgb);
-
+        backColor.setAttribute("color", rgb)
         if (colorFlag) {
             g -= 1
             b = g
             if (g < 50) {
-                colorFlag = 0;
+                colorFlag = 0
             }
         } else {
             g += 1
             b = g
             if (g > 255) {
-                colorFlag = 1;
+                colorFlag = 1
             }
         }
-        //
-        // if (!colorFlag) {
-        //     g -= 1
-        //     b = g
-        //     rgb = "#" + r.toString(16) + g.toString(16) + b.toString(16);
-        //     //toString(radix) 把数字转化为radix（取值范围2~36）进制值表示的字符串
-        //     backColor.setAttribute("color", rgb);
-        //     if (g < 50) {
-        //         colorFlag = 1;
-        //     }
-        // } else {
-        //     g += 1
-        //     b = g
-        //     rgb = r.toString(16) + g.toString(16) + b.toString(16);
-        //     //toString(radix) 把数字转化为radix（取值范围2~36）进制值表示的字符串
-        //     backColor.setAttribute("color", rgb);
-        //     if (g > 254) {
-        //         colorFlag = 0;
-        //     }
-        // }
     }
+</script>
+
+<script>
+    let UICube = document.getElementById('colorUI')
+    var UIFlag = 0
+    AFRAME.registerComponent('showui', {
+        init: function () {
+            const UIButton = document.getElementById('choose')
+            UIButton.addEventListener('click', function (evt) {
+                if (!UIFlag) {
+                    UICube.setAttribute("position", "0 0 -3")
+                    UIFlag = 1
+                } else {
+                    UICube.setAttribute("position", "0 0 2");
+                    UIFlag = 0
+                }
+            })
+        }
+    })
+</script>
+
+<script>
+    var colorChoosen = null
+
+    const blueButton = document.getElementById('colorBlue')
+    const whiteButton = document.getElementById('colorWhite')
+    const redButton = document.getElementById('colorRed')
+    const greenButton = document.getElementById('colorGreen')
+    const purpleButton = document.getElementById('colorPurple')
+
+    AFRAME.registerComponent('choosecolor', {
+        init: function () {
+            blueButton.addEventListener('click', function (evt) {
+                colorChoosen = "blue"
+            })
+            whiteButton.addEventListener('click', function (evt) {
+                colorChoosen = "white"
+            })
+            redButton.addEventListener('click', function (evt) {
+                colorChoosen = "red"
+            })
+            greenButton.addEventListener('click', function (evt) {
+                colorChoosen = "green"
+            })
+            purpleButton.addEventListener('click', function (evt) {
+                colorChoosen = "purple"
+            })
+        }
+    })
+
+    AFRAME.registerComponent('jumpnew', {
+        init: function () {
+            var urlColor = "shoeCh.html?color=" + colorChoosen
+            const finalButton = document.getElementById('jump')
+            finalButton.addEventListener('click', function (evt) {
+                window.location.href = urlColor
+            })
+        }
+    })
 </script>
 </body>
 </html>
