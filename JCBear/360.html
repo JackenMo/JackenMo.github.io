@@ -81,22 +81,23 @@
     <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
 
     <a-entity id="camera" camera position="0 5 0" look-controls cursor="rayOrigin: mouse">
-        <a-box id="colorUI" position="0 0 2" scale="4 3 .1">
-            <a-image id="close" src="img/ring5.png" position="0.4 0.37 0.5" scale="0.37 0.5 1"></a-image>
+        <a-box id="colorUI" position="0 0 2" scale="2 3 .1">
+            <a-sphere id="close" color="#FF9999" position="0.4 0.37 0.5" scale="0.03 0.04 1" closeui></a-sphere>
             <a-box position="0 0 .5" color="#777777" scale="1 .4 .1">
                 <a-box id="colorWhite" position="-.35 0 .5" scale=".1 .7 .1" color="#FFFFFF"
                        choosecolor></a-box>
                 <a-box id="colorGreen" position="-.17 0 .5" scale=".1 .7 .1" color="#00FF00"
-                       choosecolor ></a-box>
-                <a-box id="colorBlue" position="0 0 .5" scale=".1 .7 .1" color="#0000FF"
+                       choosecolor></a-box>
+                <a-box id="colorBlack" position="0 0 .5" scale=".1 .7 .1" color="#000000"
                        choosecolor></a-box>
                 <a-box id="colorPurple" position=".17 0 .5" scale=".1 .7 .1" color="#8800FF"
                        choosecolor></a-box>
                 <a-box id="colorRed" position=".35 0 .5" scale=".1 .7 .1" color="#FF0000"
                        choosecolor></a-box>
             </a-box>
-            <a-box id="jump" position="0 -.35 .5" color="#111111" scale=".3 .2 .1" jumpnew>
+            <a-box id="jump" position="0 -.35 .5" color="#555555" scale=".3 .2 .1" jumpnew>
             </a-box>
+        </a-box>
     </a-entity>
 
     <a-entity>
@@ -185,12 +186,22 @@
             })
         }
     })
+
+    AFRAME.registerComponent('closeui', {
+        init: function () {
+            const closeButton = document.getElementById('close')
+            closeButton.addEventListener('click', function (evt) {
+                UICube.setAttribute("position", "0 0 2");
+                UIFlag = 0
+            })
+        }
+    })
 </script>
 
 <script>
     var colorChoosen = null
 
-    const blueButton = document.getElementById('colorBlue')
+    const blackButton = document.getElementById('colorBlack')
     const whiteButton = document.getElementById('colorWhite')
     const redButton = document.getElementById('colorRed')
     const greenButton = document.getElementById('colorGreen')
@@ -198,33 +209,53 @@
 
     AFRAME.registerComponent('choosecolor', {
         init: function () {
-            blueButton.addEventListener('click', function (evt) {
-                colorChoosen = "blue"
+            blackButton.addEventListener('click', function (evt) {
+                colorChoosen = "shoeCh.html?color=black"
+                clearChoose()
+                blackButton.setAttribute("scale", ".125 .85 .1")
             })
             whiteButton.addEventListener('click', function (evt) {
-                colorChoosen = "white"
+                colorChoosen = "shoeCh.html?color=white"
+                clearChoose()
+                whiteButton.setAttribute("scale", ".125 .85 .1")
             })
             redButton.addEventListener('click', function (evt) {
-                colorChoosen = "red"
+                colorChoosen = "shoeCh.html?color=red"
+                clearChoose()
+                redButton.setAttribute("scale", ".125 .85 .1")
             })
             greenButton.addEventListener('click', function (evt) {
-                colorChoosen = "green"
+                colorChoosen = "shoeCh.html?color=green"
+                clearChoose()
+                greenButton.setAttribute("scale", ".125 .85 .1")
             })
             purpleButton.addEventListener('click', function (evt) {
-                colorChoosen = "purple"
+                colorChoosen = "shoeCh.html?color=purple"
+                clearChoose()
+                purpleButton.setAttribute("scale", ".125 .85 .1")
             })
         }
     })
 
     AFRAME.registerComponent('jumpnew', {
         init: function () {
-            var urlColor = "shoeCh.html?color=" + colorChoosen
             const finalButton = document.getElementById('jump')
             finalButton.addEventListener('click', function (evt) {
-                window.location.href = urlColor
+                if (colorChoosen != null) {
+                    window.location.href = colorChoosen
+                }
             })
         }
     })
+
+    function clearChoose() {
+        blackButton.setAttribute("scale", ".1 .7 .1")
+        redButton.setAttribute("scale", ".1 .7 .1")
+        whiteButton.setAttribute("scale", ".1 .7 .1")
+        greenButton.setAttribute("scale", ".1 .7 .1")
+        purpleButton.setAttribute("scale", ".1 .7 .1")
+    }
 </script>
+
 </body>
 </html>
