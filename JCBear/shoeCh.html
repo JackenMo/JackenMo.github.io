@@ -61,7 +61,7 @@
 <body>
 
 <!--还需要苹果的USDZ文件，来实现苹果的AR-->
-<model-viewer ar camera-controls alt="A 3D model" id="shoeShow" ios-src="Models/bee8.usdz"
+<model-viewer ar camera-controls alt="A 3D model" id="shoeShow"
               background-color="#222" magic-leap unstable-webxr shadow-intensity="1"></model-viewer>
 
 <!--<model-viewer src="Models/Astronaut.glb" ar camera-controls alt="A 3D model of an astronaut" background-color="#222" ios-src="Models/Astronaut.usdz" magic-leap unstable-webxr></model-viewer>-->
@@ -88,23 +88,29 @@
     switch (shoeColor) {
         case "white":
             shoeSRC = "Models/shoeW.glb";
+            shoeSRCiOS = "Models/shoeW-iOS12.usdz";
             break;
         case "black":
             shoeSRC = "Models/shoeB.glb";
+            shoeSRCiOS = "Models/shoeB-iOS12.usdz";
             break;
         case "green":
             shoeSRC = "Models/shoeG.glb";
+            shoeSRCiOS = "Models/shoeG-iOS12.usdz";
             break;
         case "red":
             shoeSRC = "Models/shoeR.glb";
+            shoeSRCiOS = "Models/shoeR-iOS12.usdz";
             break;
         case "purple":
             shoeSRC = "Models/shoeP.glb";
+            shoeSRCiOS = "Models/shoeP-iOS12.usdz";
             break;
     }
 
     var obj = document.getElementById('shoeShow');
     obj.setAttribute('src', shoeSRC);
+    obj.setAttribute('ios-src', shoeSRCiOS);
 </script>
 
 </body>
