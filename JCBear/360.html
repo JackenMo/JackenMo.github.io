@@ -146,21 +146,18 @@
 
     var r = 255
     var g = 255
-    var b = 255
     var colorFlag = 1
 
     function changeColor() {
-        var rgb = "#" + r.toString(16) + g.toString(16) + b.toString(16)
+        var rgb = "#" + r.toString(16) + g.toString(16) + g.toString(16)
         backColor.setAttribute("color", rgb)
         if (colorFlag) {
             g -= 1
-            b = g
             if (g < 50) {
                 colorFlag = 0
             }
         } else {
             g += 1
-            b = g
             if (g > 255) {
                 colorFlag = 1
             }
