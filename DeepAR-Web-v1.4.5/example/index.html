@@ -40,30 +40,63 @@
                 opacity: 0;
             }
         }
-        
-        #recordButton{
+
+        #recordButton {
             position: fixed !important;
-            /*width: 100%;*/
-            height: 75px;
-            width: 75px;
+            height: 74px;
+            width: 74px;
             bottom: 50px;
             z-index: 999999;
             left: 50%;
             margin-left: -37px;
-            background: white;
-            border-radius: 50px;
+            border-radius: 50%;
+        }
+        
+        .pin{
+            background: #ee00ff;
+            background-image: linear-gradient(to right,transparent 50%, #666 0);
+        }
+        @keyframes spin {
+            to {transform: rotate(.5turn);}
+        }
+        @keyframes bg {
+            50% {background: #666;}
+        }
+        .pin::before{
+            content: '';
+            display: block;
+            margin-left: 50%;
+            height: 100%;
+            border-radius: 0 100% 100% 0 / 50%;
+            background-color: inherit;
+            transform-origin: left;
+            animation: spin 2.5s linear 2,
+            bg 5s step-end;
+        }
+
+        #mask{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            z-index: 2;
+            border-radius: 50%;
+            background-color: #ffffff;
         }
     </style>
 </head>
 
 <body>
 <canvas class="deepar" id="deepar-canvas" oncontextmenu="event.preventDefault()"></canvas>
-<div id="recordButton"></div>
+<div id="recordButton" onclick="change()">
+    <div id="mask"></div>
+</div>
 
 <script type="text/javascript" src="lib/deepar.js"></script>
 <script type="text/javascript">
     function GetRequest() {
-        var url = decodeURI(location.search); //获取url中"?"符后的字串
+        var url = decodeURI(location.search);
         var theRequest = new Object();
         if (url.indexOf("?") != -1) {
             var str = url.substr(1);
@@ -149,6 +182,12 @@
     };
 
     deepAR.downloadFaceTrackingModel('models/models-68-extreme.bin');
+</script>
+<script>
+    function change() {
+        document.getElementById('recordButton').className='pin'
+        console.log('click')
+    }
 </script>
 </body>
 </html>
