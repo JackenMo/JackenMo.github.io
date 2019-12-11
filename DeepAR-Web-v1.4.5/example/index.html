@@ -40,11 +40,25 @@
                 opacity: 0;
             }
         }
+        
+        #recordButton{
+            position: fixed !important;
+            /*width: 100%;*/
+            height: 75px;
+            width: 75px;
+            bottom: 50px;
+            z-index: 999999;
+            left: 50%;
+            margin-left: -37px;
+            background: white;
+            border-radius: 50px;
+        }
     </style>
 </head>
 
 <body>
 <canvas class="deepar" id="deepar-canvas" oncontextmenu="event.preventDefault()"></canvas>
+<div id="recordButton"></div>
 
 <script type="text/javascript" src="lib/deepar.js"></script>
 <script type="text/javascript">
