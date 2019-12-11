@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <title>DeepAR</title>
     <style>
-
         canvas.deepar {
             border: 0px none;
             background-color: black;
@@ -20,7 +19,6 @@
             padding: 0px;
         }
 
-
         #loader-wrapper {
             position: fixed;
             top: 0px;
@@ -32,7 +30,6 @@
         }
 
         .loader {
-
             display: inline-block;
             position: relative;
             top: 42%;
@@ -105,10 +102,8 @@
         }
     </style>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-
 </head>
 <body>
-
 <canvas class="deepar" id="deepar-canvas" oncontextmenu="event.preventDefault()"></canvas>
 <div id="loader-wrapper">
     <span class="loader"></span></span>
@@ -180,7 +175,7 @@
     var deepAR = DeepAR({
         canvasWidth: canvasWidth,
         canvasHeight: canvasHeight,
-        licenseKey: '6bcc2f71b664efc05495f333acc9d812addb3d4a5467873dd8b3a3c59f15dfa71285b873f9e306dc',
+        licenseKey: 'cb88572a9bd6903ed6528f8224ee82fdb09bb5d2f35b56617dde7d166f68bf90ab7294c86235ad55',
         canvas: document.getElementById('deepar-canvas'),
         numberOfFaces: 1,
         onInitialize: function () {
