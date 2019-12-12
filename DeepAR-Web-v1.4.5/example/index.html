@@ -113,7 +113,7 @@
 </div>
 <div id="backButton" style="display:none">
 </div>
-<br/>
+
 <video controls autoplay playsinline style="display:none"></video>
 <video id="generatedVideo" autoplay controls style="display:none; width: 100%; height: 100%"></video>
 
@@ -229,7 +229,6 @@ function startRecording() {
     recorder = RecordRTC(deeparCanvas, {
         type: 'canvas',
         showMousePointer: false,
-        useWhammyRecorder: true,
     });
 
     recorder.startRecording();
