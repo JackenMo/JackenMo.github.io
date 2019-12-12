@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <title>DeepAR</title>
     <style>
         canvas.deepar {
@@ -51,6 +52,18 @@
             margin-left: -37px;
             border-radius: 50%;
         }
+
+        #backButton {
+            position: fixed !important;
+            height: 74px;
+            width: 74px;
+            bottom: 50px;
+            z-index: 999999;
+            left: 50%;
+            margin-left: -37px;
+            border-radius: 50%;
+            background-color: red;
+        }
         
         .pin{
             background: #ee00ff;
@@ -84,14 +97,25 @@
             border-radius: 50%;
             background-color: #ffffff;
         }
+
+        video {
+        width: 30%;
+        border-radius: 5px;
+        border: 1px solid black;
+        }
     </style>
 </head>
 
 <body>
 <canvas class="deepar" id="deepar-canvas" oncontextmenu="event.preventDefault()"></canvas>
-<div id="recordButton" onclick="change()">
+<div id="recordButton">
     <div id="mask"></div>
 </div>
+<div id="backButton" style="display:none">
+</div>
+<br/>
+<video controls autoplay playsinline style="display:none"></video>
+<video id="generatedVideo" autoplay controls style="display:none; width: 100%; height: 100%"></video>
 
 <script type="text/javascript" src="lib/deepar.js"></script>
 <script type="text/javascript">
@@ -184,10 +208,71 @@
     deepAR.downloadFaceTrackingModel('models/models-68-extreme.bin');
 </script>
 <script>
-    function change() {
-        document.getElementById('recordButton').className='pin'
-        console.log('click')
+
+</script>
+<script src="lib/RecordRTC.js"></script>
+<script src="https://www.webrtc-experiment.com/screenshot.js"></script>
+<script>
+
+var recording = false;
+var autoEnd = null;
+
+var deeparCanvas = document.getElementById('deepar-canvas');
+var recorder = null;
+
+function startRecording() {
+    if (recording) return;
+    console.log('start recording');
+
+    recording = true;
+    $('#recordButton').addClass('pin');
+    recorder = RecordRTC(deeparCanvas, {
+        type: 'canvas',
+        showMousePointer: false,
+        useWhammyRecorder: true,
+    });
+
+    recorder.startRecording();
+    autoEnd = setTimeout(endRecording, 5000);
+}
+
+function endRecording() {
+    if (!recording) return;
+    console.log('end recording');
+
+    if (autoEnd) {
+        clearInterval(autoEnd);
+        autoEnd = null;
     }
+    recording = false;
+
+    recorder.stopRecording(function(url) {
+        $('#generatedVideo')[0].src = url;
+        $('#generatedVideo').show();
+        $('#backButton').show();
+        $('#deepar-canvas').hide();
+        $('#recordButton').hide();
+    });
+
+    $('#recordButton').removeClass('pin');
+}
+
+$('#backButton').click(() => {
+    $('#generatedVideo').hide();
+    $('#backButton').hide();
+    $('#deepar-canvas').show();
+    $('#recordButton').show();
+});
+
+$('#recordButton').click(() => {
+    if (!recording) {
+        startRecording();
+    }
+    else {
+        endRecording();
+    }
+});
+
 </script>
 </body>
 </html>
