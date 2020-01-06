@@ -8,24 +8,39 @@
 </head>
 
 <body style="margin: 0; background:url(https://jcstatic.metatype.cn/bg/landingBg.jpg) no-repeat; background-size: cover;background-position:50% 50%;">
-<a href="https://jimmychoo.teown.com/" id="btn"><img src="https://jcstatic.metatype.cn/btn/landingBtn.png"
-                                            style="width:120px;position:absolute;bottom:30px;left: calc(50% - 60px);"/></a>
+<a id="btn"><img src="https://jcstatic.metatype.cn/btn/landingBtn.png"
+                 style="width:120px;position:absolute;bottom:30px;left: calc(50% - 60px);"/></a>
 </body>
 
 <script>
-    function isWechat(){
+    function isWechat() {
         var ua = navigator.userAgent.toLowerCase();
-        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
             return true;
         } else {
             return false;
         }
     }
 
-    if(isWechat()==true)
+    function isDesktop() {
+        var ua = navigator.userAgent;
+        var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (ua.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    if (isWechat() == true)
         document.getElementById('btn').setAttribute('href', "https://jimmychoo.teown.com/")
+    else if (isDesktop() == true)
+        document.getElementById('btn').setAttribute('href', "https://jimmychoo.teown.com/PC.html")
     else
-        document.getElementById('btn').setAttribute('href', "https://jimmychoo.teown.com/factory/5c685a815e174b6f80c4187b1c9177ee/")
+        document.getElementById('btn').setAttribute('href', "https://jimmychoo.teown.com/factory/wechat_ticket/")
 </script>
 
 </html>
