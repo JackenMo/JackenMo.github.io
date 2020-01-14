@@ -2,9 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caff5855-b975-4c6e-9168-50c9ec8b2bc9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AR.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/1KLC.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/1KLC.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/ALL.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/ALL.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Burgers_D_256.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Burgers_N_256.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Fried_foods_D_256.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Fried_foods_N_256.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Nuggets_box_D_256.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Fast_Food_Heaven_Pack/FFHP_Textures/FFHP_TEX_256/FFHP_TEX_Nuggets_box_N_256.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/cash register.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/kebab color 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/kebab color plastic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/lamp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/table wood.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/tiles N.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/tiles N_s.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/tiles N_sc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/tiles.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/tiles_s.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/tiles_sc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/tray.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Assets/Kebab Interior/Textures/wood 1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Astronaut.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/Astronaut.usdz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/CheeseBurger.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/CheeseBurger.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/ChickenNuggets.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/ChickenNuggets.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/DoubleBurger.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/DoubleBurger.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/KIT_s.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/KIT_s.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/KTC.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GLTF/KTC.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JingleBells.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/artest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture-sample.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-world.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/img (1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/img (2).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/img (3).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/img (4).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/index (1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/index (2).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/index (3).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/index (4).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/v2.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/v2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/v23.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/v23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/v24.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/v24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/place1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/place2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/place3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleTest.html" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,8 +93,14 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -40,15 +114,15 @@
       <recent name="D:\WebAR\GitWeb\JackenMo.github.io\AFrame" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -68,6 +142,7 @@
       <workItem from="1567747922968" duration="7553000" />
       <workItem from="1568176498850" duration="8012000" />
       <workItem from="1568796151232" duration="1208000" />
+      <workItem from="1578994547517" duration="691000" />
     </task>
     <servers />
   </component>
